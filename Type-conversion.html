@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Conversion</title>
+</head>
+<body>
+    <h1>HELLO, I'M LEARNING TYPE CONVERSIION</h1>
+    <script>
+        // IMPLICIT AND EXPLICIT TYPE CONVERSION
+        
+        // IMPLICIT
+        let result = "3" + 2;
+        console.log (typeof result, result);
+        result = true + 1;
+        console.log (typeof result, result);
+        result = '3' + null;
+        console.log (typeof result, result);
+
+        const sum = '20' + 30; //2030
+        console.log (typeof sum, sum)
+
+        const mult = '20' * 30; //600
+        console.log (typeof mult, mult);
+
+        const Mult = 'hello' * 30; //600
+        console.log (typeof Mult, Mult);
+
+        const multi = 50 + true; // 51
+        console.log (typeof multi, multi);
+         
+
+        let bExample = true + true;
+        console.log (typeof bExample, bExample)
+
+        // EXPLICIT CONVERSION
+
+        let EXPLICIT = String(true);
+        console.log (typeof EXPLICIT, EXPLICIT);
+        EXPLICIT = Number('hello')
+        console.log (typeof EXPLICIT, EXPLICIT); // NAN
+        EXPLICIT = Number('');
+        console.log (typeof EXPLICIT, EXPLICIT); // 0
+        EXPLICIT = Number(null); //0
+        console.log (typeof EXPLICIT, EXPLICIT);
+
+        EXPLICIT = Number(undefined)
+        console.log (typeof EXPLICIT, EXPLICIT); //NAN
+
+        // BOOLEAN
+        EXPLICIT = Boolean(2)
+        console.log (typeof EXPLICIT, EXPLICIT);
+        EXPLICIT = Boolean('')//FALSE
+        console.log (typeof EXPLICIT, EXPLICIT);
+        EXPLICIT = Boolean(' ')// TRUE
+    </script>
+</body>
+</html>
