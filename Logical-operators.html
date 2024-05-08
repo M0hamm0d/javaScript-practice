@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Types of logical operators:
+            || (or operator)
+            && (and operator)
+            ! (not operator)
+        */
+       //if !(age>14 && age < 90){}
+       let userName = prompt("Who's there?",'');
+       let password = 'TheMaster';
+       if (userName == 'Admin'){
+        let pass = prompt('password');
+        if (pass === 'TheMaster') {
+        alert('Welcome');
+       }
+       else if (pass === ''){
+        alert('cancelled')
+       }
+       else{
+        alert("I don't know you");
+       }
+       } else if (userName == ''){
+        alert('canceled');
+       } else {
+        alert('I dont know you');
+       }
+    </script>
+</body>
+</html>
