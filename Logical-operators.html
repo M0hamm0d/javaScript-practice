@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>HEYY, I'M LEARNING JAVASCRIPT</h1>
     <script>
         /* Types of logical operators:
             || (or operator)
@@ -13,7 +14,7 @@
             ! (not operator)
         */
        //if !(age>14 && age < 90){}
-       let userName = prompt("Who's there?",'');
+       /*let userName = prompt("Who's there?",'');
        let password = 'TheMaster';
        if (userName == 'Admin'){
         let pass = prompt('password');
@@ -31,6 +32,24 @@
        } else {
         alert('I dont know you');
        }
+       let userAge = prompt("What's my Real age",'Input your age here')
+       if (userAge >=18 || userAge =='eighteen'){
+        alert('Access Allowed')
+       }
+       else{
+        alert('you are too young for this app')
+       }*/
+       //Nullish coalescing operator ??
+       let a;
+       let b;
+       let c = 'Alphabet'
+       console.log(a??c);//Alphabet
+       console.log(b??c);//alphabet
+
+       //Nullish coalescing returns the first defined value, while OR operator returns the first defined value
+       let height;
+       height ??= 100;
+       console.log(height);
     </script>
 </body>
 </html>
