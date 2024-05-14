@@ -54,6 +54,19 @@
         //     'Greeting': (login == '')?
         //     'No login': '';
         */
+        //your source of income based on your age.
+        var age = 25;
+        if(age>=65){
+            console.log('you get the income from your pension');
+        } else if (age<65 && age >= 18){
+            console.log('Each month you get a salary');
+        } else if (age < 18){
+            console.log('You get an allowance')
+        } else{
+            console.log('The value of the age variable is not numerical')
+        }
+
+
        let owner = prompt('Who is the owner of this PC', '');
         if(owner == 'Muhammad'){
             alert('Absolutely correct 😂');
