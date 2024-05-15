@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <h1>Helleo, I'm learning function</h1>
+
+    <script>
+        /*function showMessage(){
+            console.log('Hello, Everyone');
+        }
+        showMessage();
+
+        function showName(){
+            console.log('My Name is Muhammad');
+        }
+        showName();
+        */
+        //LocalVariable (A variable declared inside a function is only visible inside that function)
+        //E.G 1
+        // function showMessage(){
+        //     let message = 'Happy Birthday Muhammad';
+        //     console.log(message);
+        // }
+        // showMessage();//Happy birthday Muhammad
+        // console.log (message)//error
+
+        // function userAge(){
+        //     let userage = 5;
+        //     console.log(userage);//5
+        // }
+        // console.log(userage)// error
+        // userAge()
+
+        //Outer Variable()
+        /*let userName = 'Mahmood';
+        function myFunction(){
+            let Message = 'Hello,' + userName;
+            console.log(Message);
+        }
+        myFunction()
+        */
+       function userInfo(currentYear,DOB){
+        console.log (currentYear - DOB)
+       }
+       userInfo(2034,2004);
+       userInfo(2035,1995)
+
+
+       function functionName(){
+        let myName = 'Muhammad'
+        let myAge = 20;
+        return 'My name is' + myName + ',' + "I'm" + myAge + 'years old';
+        console.log('MM')
+       }
+       functionName();
+
+       function getInfo(placeOfBirth) {
+        if (placeOfBirth == undefined){
+            placeOfBirth = 'Empty'
+        }
+        console.log(placeOfBirth)
+       }
+       getInfo()
+
+       function returnLeast(a,b) {
+        if (a > b){
+            return b;
+        } else {
+            return a
+        }
+       }
+       let result = returnLeast(5,2);
+       console.log(result)
+
+       function power(c,d) {
+        return c**d
+       }
+       let Result = power(3,3);
+       console.log (Result);
+
+       function isEven(number){
+            if (number % 2 === 0){
+                return 'That is true' 
+            }    {
+                return 'That is false'
+            }
+        }
+        console.log (isEven(5))
+
+        function add(x,y){
+            return x + y
+        }
+        console.log(add(3,2))//5
+    </script>
+</body>
+</html>
