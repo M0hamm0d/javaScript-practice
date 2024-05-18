@@ -25,6 +25,7 @@
         function greet(name) {
         alert(`hello ${name}`);
         }
+        
 
         function processUserInput(callback) {
             let name = prompt('Please enter your name.');
@@ -48,6 +49,18 @@
                 console.log('Welcome to this page')
             }
         ) () ; 
+        
+        const cutPieces = function(fruit){
+            return fruit * 4;
+        }
+        const fruitProcessor = function(Apples, Oranges){
+            const applePieces = cutPieces(Apples);
+            const orangePieces = cutPieces(Oranges)
+            let juice = `This juice was made from ${applePieces} Apples and ${orangePieces} Oranges`
+            return juice;
+        };
+        let fruitJuice = fruitProcessor(3,2);
+        console.log(fruitJuice);
     </script>
 </body>
 </html>
