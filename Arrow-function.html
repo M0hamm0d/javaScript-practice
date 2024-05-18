@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow function</title>
+</head>
+<body>
+    <h1>Hello, I'm learning arrow function</h1>
+    <script>
+        /*let ask = (question, yes, no) =>{
+            if (confirm(question)) yes();
+            else no();
+        }
+        ask(
+            'Do you agree?',
+            () => alert('You Agreed.'),
+            () => alert( 'You cancelled the execution')
+        );
+
+        let year = (year,firstName) => {
+            let age = 2034 - year;
+            let retirement = 65 - age;
+            return `${firstName} will retire ${retirement} years from now` 
+        }
+
+        let retirementAge = year(2004,'Muhammad');
+        console.log(retirementAge)
+        */
+        //EXCERCISE
+        const calcAverage = (num1, num2, num3) =>(num1 + num2 + num3)/3;
+        let scoreDolphins = calcAverage(3,5,5);
+        let scoreKaolas = calcAverage(12,10,2);
+
+        function checkWinner(avgDolphins,avgKaolas) {
+            if(avgDolphins >= avgKaolas * 2){
+                console.log(`Dolphin win (${avgDolphins} vs ${avgKaolas})`)
+            }else if (avgKaolas >= avgDolphins * 2){
+                console.log(`Kaolas win (${avgKaolass} vs ${avgDolphin})`)
+            }else{
+                console.log('no team win')
+            }
+        }
+        checkWinner(scoreDolphins,scoreKaolas)
+    </script>
+</body>
+</html>
