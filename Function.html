@@ -95,6 +95,34 @@
             return x + y
         }
         console.log(add(3,2))//5
+
+
+        //Practice 
+         const checkAvg = (num1 , num2 , num3) =>  (num1 + num2 + num3)/2;
+
+        let avgD = checkAvg(85, 54, 41);
+        let avgK = checkAvg(23, 34, 27);
+
+        function checkWin(teamD,teamK) {
+            if (teamD >= teamK*2){
+                console.log(`TeamD wins (${teamD} vs ${teamK})`)
+            } else if (teamK >= teamD*2){
+                console.log(`TeamK wins (${teamK} vs ${teamD})`)
+            } else {
+                console.log('no winner');
+            }
+        }
+        checkWin(avgD,avgK)
+
+        //Exercise
+        function describeCountry(country, population, capitalCity){
+            return`${country} has ${population} million people and its capital city is ${capitalCity}`
+        };
+        const descNigeria = describeCountry('Nigeria', 200, 'Abuja');
+        const descGhana = describeCountry('Ghana', 30, 'Accra');
+        const descFinland = describeCountry('Finland', 6, 'Helsinki');
+
+        console.log(descFinland,descGhana,descNigeria)
     </script>
 </body>
 </html>
