@@ -22,25 +22,25 @@
         // }
         // ask('Is this a number',accept,reject)
 
-        function greet(name) {
-        alert(`hello ${name}`);
-        }
+        // function greet(name) {
+        // alert(`hello ${name}`);
+        // }
         
 
-        function processUserInput(callback) {
-            let name = prompt('Please enter your name.');
-            callback(name);
-        }
-        processUserInput(greet);
+        // function processUserInput(callback) {
+        //     let name = prompt('Please enter your name.');
+        //     callback(name);
+        // }
+        // processUserInput(greet);
 
-        function display(result) {
-            console.log(result)
-        }
-        function add(num1,num2, myCallback) {
-            let sum = num1 + num2;
-            myCallback(sum);
-        }
-        add(10,20,display);
+        // function display(result) {
+        //     console.log(result)
+        // }
+        // function add(num1,num2, myCallback) {
+        //     let sum = num1 + num2;
+        //     myCallback(sum);
+        // }
+        // add(10,20,display);
 
 
         //Anonymous function
@@ -61,6 +61,23 @@
         };
         let fruitJuice = fruitProcessor(3,2);
         console.log(fruitJuice);
+
+        //Excercise
+        const percentageOfWorld1 = function(population){
+            return (population/7900)*100;
+        }
+        let nigeriaPopulation = percentageOfWorld1(11000000);
+        let ghanaPopulation = percentageOfWorld1(55000000);
+        let finlandPopulation = percentageOfWorld1(200000000);
+
+        // console.log(nigeriaPopulation,finlandPopulation,ghanaPopulation);
+        
+
+        //Callback function
+        function describePopulation(country, population) {
+            const description = `${country} has ${population} million people, which is about ${ghanaPopulation} % of the world`;console.log(description)
+        }
+        describePopulation('Ghana', 15000000);
     </script>
 </body>
 </html>
