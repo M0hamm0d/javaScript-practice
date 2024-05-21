@@ -42,6 +42,7 @@ for (let i = 2; i <= 10; i++){
         alert(i);
     }
 }
+
 // while (true){
 //     let value = +prompt('input a value greater than 100',0)
 //     if (value > 100)break;
