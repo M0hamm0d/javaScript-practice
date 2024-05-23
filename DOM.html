@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .alert{
+            padding: 15px;
+            border: 1px solid #d6e9c6;
+            border-radius: 4px;
+            color: #3c763d;
+            background-color: #dff0d8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div"></div>
+    <ul id="ul">
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+        <li>Fourth</li>
+        <li>Fifth</li>
+    </ul>
+    <script>
+        ul.before('before text')
+        ul.after('After text')
+        let firstChild = document.createElement('li');
+        firstChild.innerHTML = 'First child';
+        ul.prepend(firstChild)
+        let div = document.createElement('div');
+        div.className = 'alert';
+        div.innerHTML = '<strong>Hi there</strong> You have read an important message';
+        document.body.append(div)
+
+        div.before('<p>Hello</p>', document.createElement('hr'));
+
+        ul.insertAdjacentElement("afterbegin",`<p class="alarm"><strong>Hi there</strong>What is your name</p>`);
+        /*alert(location.href)
+        if (confirm('Go to Wikipidea')){
+            location.href = "https://wikipedia.org";
+        }
+        */
+        // for (let i = 0; i < document.body.childNodes.length; i++) {
+        //     alert( document.body.childNodes[i] ); // Text, DIV, Text, UL, ..., SCRIPT
+// }
+    </script>
+</body>
+</html>
+
