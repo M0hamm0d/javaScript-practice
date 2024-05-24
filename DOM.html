@@ -16,16 +16,55 @@
 </head>
 
 <body>
-    <div class="div"></div>
-    <ul id="ul">
-        <li>First</li>
-        <li>Second</li>
-        <li>Third</li>
-        <li>Fourth</li>
-        <li>Fifth</li>
-    </ul>
+    <div class="container">
+        <div class="div"></div>
+        <ul id="ul">
+            <li class="list-item">First</li>
+            <li class="list-item">Second</li>
+            <li class="list-item">Third</li>
+            <li class="list-item">Fourth</li>
+            <li class="list-item">Fifth</li>
+        </ul>
+        <input id="theid" type="text">
+        <button onclick="appendToDisplay(1)">1</button>
+    </div>
     <script>
-        ul.before('before text')
+        let input = document.getElementById('theid')
+        console.log(input);
+        function appendToDisplay(value){
+            input.value +=Number(value)
+        }
+        const listItem = document.getElementsByClassName('list-item');
+        console.log(listItem);
+        for(i = 0; i < listItem.length; i++){
+            listItem[i].style.backgroundColor = 'red'
+        }
+        const ul = document.querySelector('ul');
+        console.log(ul.parentElement.parentElement)
+        //or parentnode
+        //getting attribute
+        console.log(ul.getAttribute('id'))//ul
+        const li = document.createElement('li');
+        ul.append(li);
+        //Modifying the text
+        li.innerText = 'Sixth'
+
+        //modifying classes and Attributes
+        //li.setAttribute('class','list-item')
+        //confirm if it has list item
+        //or
+        li.classList.add('list-item')
+        for(i = 0; i < listItem.length; i++){
+            listItem[i].style.backgroundColor = 'red'
+        }
+        console.log(li.classList.contains('list-item'));//true
+        //remove class
+        li.removeAttribute('class')
+
+        //removeelement
+        li.remove()
+
+        /*ul.before('before text')
         ul.after('After text')
         let firstChild = document.createElement('li');
         firstChild.innerHTML = 'First child';
@@ -38,14 +77,14 @@
         div.before('<p>Hello</p>', document.createElement('hr'));
 
         ul.insertAdjacentElement("afterbegin",`<p class="alarm"><strong>Hi there</strong>What is your name</p>`);
-        /*alert(location.href)
+        alert(location.href)
         if (confirm('Go to Wikipidea')){
             location.href = "https://wikipedia.org";
         }
-        */
-        // for (let i = 0; i < document.body.childNodes.length; i++) {
-        //     alert( document.body.childNodes[i] ); // Text, DIV, Text, UL, ..., SCRIPT
-// }
+        
+        for (let i = 0; i < document.body.childNodes.length; i++) {
+            alert( document.body.childNodes[i] ); // Text, DIV, Text, UL, ..., SCRIPT
+        }*/
     </script>
 </body>
 </html>
