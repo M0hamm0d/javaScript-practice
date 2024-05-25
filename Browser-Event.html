@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button id="bottomm">
+        Click me
+    </button> -->
+    <button id="hide-button" onclick="">
+        click to hide the text
+    </button>
+    <p id="p-tag"></p>
+    <button id="hide" onclick="hide()">
+        click to hide
+    </button>
+    <script>
+        let pTag = document.getElementById('p-tag');
+        pTag.innerHTML='Hi there'
+        console.log(pTag.textContent);
+        let hideButton = document.getElementById('hide-button')
+        document.getElementById('hide-button').onclick =function() {
+            document.getElementById('p-tag').hidden = true;  
+        } 
+        function hide() {
+            document.getElementById('hide').hidden = true;
+        }
+    </script>
+
+    <!-- <script>
+        //ways to assign event handlers
+        //1.HTML Attribute:onclick=''
+        //2.DOM property:elem.onclick = function
+        //3.Methods:element.addEventListener(event, handler, [options])
+        //const button = document.getElementById('bottomm')
+        function handler1() {
+           console.log('Good morning')
+        }
+        function handler2() {
+           console.log('Good Evening')
+        }
+        // button.onclick = function () {
+        //     appendToDisplay()
+        // }
+        bottomm.onclick = function(event) {
+            console.log(event.type); (click)
+            console.log(event.currentTarget);
+            console.log(event.clientX);
+            console.log(event.clientY)
+        }
+        //addEventListener
+        //syntax
+        //element.addEventListener(event, handler, [options])
+        // bottomm.addEventListener('click',handler1)
+        // bottomm.addEventListener('click',handler2)
+    </script> -->
+</body>
+</html>
