@@ -25,10 +25,28 @@
             <li class="list-item">Fourth</li>
             <li class="list-item">Fifth</li>
         </ul>
+        <ul id="un">
+            <li id="one">1</li>
+            <li id="two">4</li>
+        </ul>
+        <div id="div">blue</div>
         <!-- <input id="theid" type="text">
         <button onclick="appendToDisplay(1)">1</button> -->
     </div>
     <script>
+        div.style.cssText = `color:red; font-size:20px;width:100px; background-color:blue;`
+        div.style.margin = '10px'
+        document.body.style.background = 'red';
+        document.body.style.removeProperty('background');
+        document.body.classList.add('classList')
+        console.log(document.body.classList)
+        let one = document.body.querySelector('#one')
+        let li2 = document.createElement('li');
+        li2.textContent = '2';
+        one.append(li2)
+        let li3 = document.createElement('li');
+        li3.textContent = '3';
+        one.append(li3)
         // let input = document.getElementById('theid')
         // console.log(input);
         // function appendToDisplay(value){

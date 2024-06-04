@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object javaScript</title>
+</head>
+<body>
+    <h1>I'm learning Object</h1>
+    <script>
+        //property = {key:value}
+        //syntax of object
+        let user = {
+            name: 'Muhammad',
+            age: 30,
+            'like bird': true,
+        }
+        console.log(user.name);
+        user.isAdmin = true;
+        console.log(user.isAdmin);
+        delete user.isAdmin
+        console.log(user.isAdmin);
+        console.log(user['like bird'])
+
+        //computed property
+        //syntax
+        // const propertyName = 'dynamicPropertyName';
+        // const obj = {
+        //     [propertyName]: value,
+        // };
+
+        //EG
+        // function createPerson(name, age){
+        //     return {
+        //         name: name,
+        //         age: age,
+        //         [`Is ${name} an adult`]: age >= 18,
+        //     }
+        // }
+        // let person = createPerson('Muhammad', 12);
+        // console.log(person)
+
+        // function createFunction(id, name, age){
+        //     const product = {}
+        //     product[id] = {
+        //         name: name,
+        //         age: age,
+        //     }
+        //     return product
+        // }
+        // const productData = createProduct('Abcd', 'sample', 99 )
+        // console.log(productData);
+
+        // function makeUser(color, price){
+        //     return {
+        //         color,
+        //         price,
+        //     }
+        // }
+        // const User = makeUser('black', 1.99);
+        // console.log(User);
+        //let fruit = prompt('what fruit to buy', 'Apple');
+        // let bag = {
+        //     [fruit]: 5,
+        // }
+        // console.log(bag.Apple)
+        //let name = prompt('Enter your name','Kehinde');
+        let house = {
+            [name]: 'Tanke',
+        }
+        console.log(house.Kehinde)
+
+        //in Operator, to test weather a property exist or not
+        //syntax 'key' in object
+        let myInfo = {
+            myName: 'Muhammad',
+            myAge: 30,
+        }
+        console.log('myName' in myInfo);
+        console.log('myBame' in myInfo)
+
+        //for.. in loop(to see all the keys and value of object)
+        //syntax for (key in object){} EG
+        let myInfomation = {
+            mySurname: 'Muhammad',
+            myRealge: 30,
+        }
+        for (let key in myInfomation){
+            console.log(key)
+            console.log(myInfomation[key])
+        }
+
+        let codes = {
+            234: 'Nigeria',
+            44: 'Germany',
+            1: 'USA',
+        }
+        for (let code in codes){
+            console.log(code);// 1 44 234
+        }
+        //Assignment
+        let theUser = {};
+        theUser.name = 'john';
+        theUser.surname = 'smith';
+        theUser.name = 'Pete';
+        delete theUser.name;
+
+        //Assignment 2
+        function isEmpty(obj) {
+            for ( let key in obj){
+                return false
+            }
+            return true
+        };
+        let schedule = {};
+        console.log (isEmpty(schedule))
+
+        let salaries = {
+            John: 100,
+            Ann: 160,
+            Pete: 130
+        }
+        let sum = 0;
+        for (let prop in salaries){
+            sum += salaries[prop]
+        }
+        console.log(sum)
+
+        let menu = {
+            width: 200,
+            height: 300,
+            title: "My menu"
+        };
+        let clone = {}
+        // for (let key in menu){
+        //     menu[key] = clone[key]
+        // } or
+        Object.assign(clone, menu);
+        console.log(clone.width)
+        function multiplyNumeric(obj){
+            for (let prop in obj){
+                if (typeof obj[prop] == 'number'){
+                    obj[prop]*=2
+                }
+            }
+        }
+        
+        multiplyNumeric(menu);
+        for (let key in menu){
+            console.log(menu[key])
+        }
+        // for (let key in menu){
+        //     console.log(menu)
+        // };
+        let keys = { name: "John" };
+
+        let permissions1 = { canView: true };
+        let permissions2 = { canEdit: true };
+        Object.assign(keys, permissions1, permissions2);
+        console.log(keys.canView)
+    </script>
+</body>
+</html>
