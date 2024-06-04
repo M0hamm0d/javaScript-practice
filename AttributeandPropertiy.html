@@ -4,28 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .alert {
+            padding: 15px;
+            border: 1px solid #d6e9c6;
+            border-radius: 4px;
+            color: #3c763d;
+            background-color: #dff0d8;
+        }
+    </style>
 </head>
 <body id="tag">
     <input>
     <a name="list">the list</a>
-    <ul>
+    <!-- <ul>
         <li><a href="http://google.com">http://google.com</a></li>
         <li><a href="/tutorial">/tutorial.html</a></li>
         <li><a href="local/path">local/path</a></li>
         <li><a href="ftp://ftp.com/my.zip">ftp://ftp.com/my.zip</a></li>
         <li><a href="http://nodejs.org">http://nodejs.org</a></li>
         <li><a href="http://internal.com/test">http://internal.com/test</a></li>
+    </ul> -->
+    <ol id="elem">
+        <li>Hello</li>
+        <li>World</li>
+    </ol>
+    <ul id="interface">
+
     </ul>
     <script>
-        let links = document.querySelectorAll('a');
-        for(let link of links){
-            let href = link.getAttribute('href');
-            if (!href) continue;
-            if (!href.includes('://')) continue;
-            if (!href.startsWith('http://internal.com'))continue;
-
-            link.style.color = 'orange';
+        function createTree(container,data){
+            
         }
+        // LI.innerHTML = prompt('Input a value')
+        // interface.append(LI) 
+        while (true){
+            let data = prompt("Enter the text for the list item", "");
+            if (!data) {
+                break;
+            }
+        }
+        let LI = document.createElement('li')
+        interface.textContent = data
+        interface.append(LI)
+        // interface.append(LI)
+        function clear(elem){
+            elem.remove()
+        }
+        clear(elem)
+        let div = document.createElement('div');
+        div.className='alert';
+        div.innerHTML = "<strong>Hi there!</strong> You've read an important message.";
+        document.body.append(div)
+
+        // let liFirst = document.createElement('li')
+        // liFirst.innerHTML= 'nice'
+        // div.before(liFirst)
+        // let links = document.querySelectorAll('a');
+        // for(let link of links){
+        //     let href = link.getAttribute('href');
+        //     if (!href) continue;
+        //     if (!href.includes('://')) continue;
+        //     if (!href.startsWith('http://internal.com'))continue;
+
+        //     link.style.color = 'orange';
+        // }
         let input = document.querySelector('input');
         input.setAttribute('placeholder', 'text');
         console.log(input.placeholder); // id (updated)
@@ -52,6 +95,12 @@
         // let input = document.querySelector('input');
         // input.setAttribute('id', 'id');
         // alert(input.id); // id (updated)
+
+        //cloning node
+        let div2 = div.cloneNode(true)
+        div2.innerHTML = 'Hello'
+        div.before(div2)
+
     </script>
 </body>
 </html>
