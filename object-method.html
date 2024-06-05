@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>I'm learning object method</h1>
+    <script>
+        const jonas = {
+            firstName: 'Muhammad',
+            lastName: 'Abdussalam',
+            birthYear: 1991,
+            hasDriversLicense: true,
+            job: 'teacher',
+
+            calcAge: function(){
+                this.age = 2032 - this.birthYear;
+                return this.age
+            },
+            getSummary: function(){
+                return (`${this.firstName} is ${this.calcAge()}-year old ${this.job}. and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license `)
+            } 
+        }
+        console.log(jonas.calcAge());
+        console.log(jonas.getSummary());
+
+
+        //assignment
+        const Mark = {
+            fullName: 'Mark Miller',
+            mass: 78,
+            height: 1.69,
+            calcBMI: function(){
+               this.bmi = ((this.mass)/(this.height*this.height))
+               return this.bmi
+            }
+        }
+
+        console.log(Mark.calcBMI())
+        const John = {
+            fullName: 'John Smith',
+            mass: 92,
+            height: 1.95,
+            calcBMI: function(){
+               this.bmi = ((this.mass)/(this.height*this.height))
+               return this.bmi
+            }
+        }
+        console.log(John.calcBMI())
+        if (John.calcBMI > Mark.calcBMI){
+            console.log(`${John.fullName} BMI (${John.calcBMI()}) is higher than ${Mark.fullName} ${mark.calcBMI()} `)
+        } else {
+            console.log(`${Mark.fullName} BMI (${Mark.calcBMI()}) is higher than ${John.fullName} (${John.calcBMI()}) `)
+        }
+
+        // let user = {
+        //     name:'Moses',
+        //     age: 35,
+        //     sayHi: function(){
+        //         return this
+        //     }
+        // }
+        // console.log (user.sayHi().name)
+        // function sayHi(){
+        //     return {
+        //         name: 'john',
+        //         ref(){
+        //             return this
+        //         }
+        //     }
+        // }
+        // let user = sayHi()
+        // console.log(user.ref().name)
+        let user = {
+            name: 'Muhammad',
+            ref: function(){
+                return this
+            }
+        }
+        console.log(user.ref().name)
+
+        let calculator = {
+            read: function(){
+                this.a = +prompt('input value 1');
+                this.b = +prompt('input value 2');
+            },
+            sum: function(){
+                return (this.a + this.b)
+            },
+            mul: function(){
+                return (this.a * this.b)
+            }
+        }
+        calculator.read()
+        let sum = calculator.sum()
+        alert (sum) ;
+        let mul = calculator.mul()
+        alert (mul)      
+    </script>
+</body>
+</html>
