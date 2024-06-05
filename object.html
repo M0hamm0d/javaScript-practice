@@ -10,6 +10,15 @@
     <script>
         //property = {key:value}
         //syntax of object
+
+        // let aboutMe = {
+        //     name: 'john',
+        //     age: 30 , 
+        // }
+        // aboutMe.key = prompt('what is your name');
+        // console.log(aboutMe.key)
+
+
         let user = {
             name: 'Muhammad',
             age: 30,
@@ -158,6 +167,33 @@
         let permissions2 = { canEdit: true };
         Object.assign(keys, permissions1, permissions2);
         console.log(keys.canView)
+        const jonas = {
+            firstName: 'Jonas',
+            lastName: 'Moses',
+            age: 2037 - 1991,
+            job: 'Teacher',
+        }
+        let interestedIn = prompt( 'What will you like to know about john?' )
+        console.log (jonas[interestedIn])
+
+        //${firstName} has ${jonas.bestfriend[i]} and his best friend is array[0]
+        function empty(obj){
+            for (let key in obj){
+                return false
+            } 
+            return true
+        }
+        console.log(empty(jonas))
+
+        function addNumeric(obj){
+            for (let key in obj){
+                if (obj[key] == 'Number'){
+                    obj[key]*=2
+                }
+            }
+        }
+        addNumeric(jonas)
+        console.log(jonas.age)
     </script>
 </body>
 </html>
