@@ -172,7 +172,9 @@
             lastName: 'Moses',
             age: 2037 - 1991,
             job: 'Teacher',
+            'likes bird': true,
         }
+        jonas['likes bird']
         let interestedIn = prompt( 'What will you like to know about john?' )
         console.log (jonas[interestedIn])
 
@@ -194,6 +196,49 @@
         }
         addNumeric(jonas)
         console.log(jonas.age)
+
+        let time = {};
+
+        // for (let key in time) {
+        //     return false
+        // } 
+        function empty( value ){
+            for (let key in value){
+                return false
+            } return true
+        }
+        console.log( empty(time))
+
+
+        // let foodMenu = {
+        //     Fufu: 200,
+        //     Amala: 300,
+        //     title: "My menu"
+        // };
+        function check(food){
+            for (let key in food){
+            if (typeof food[key] == 'number'){
+                food[key]*=2;
+            }
+        }
+        }
+        let foodMenu = {
+            Fufu: 200,
+            Amala: 300,
+            title: "My menu"
+        };
+        check(foodMenu);
+        console.log(foodMenu.Fufu)
+
+        
+        let maker = {
+            name: 'John',
+            ref(){
+                return this.name
+            }
+        }
+        console.log (maker.ref())
+
     </script>
 </body>
 </html>
