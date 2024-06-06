@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name, age){
+            this.firstName = name,
+            this.age = age
+        }
+        const person1 = new Person('Bill', 30);
+        const person2 = new Person('Muhammad', 23)
+        console.log(person1);
+        console.log(person2)
+
+        function User(name,address){
+            this.name = name,
+            this.address = address
+        };
+        const user1 = new User('Muhammad','Tanke');
+        console.log(user1)
+        let obj = {}
+        function A(){
+            return obj
+        };
+        function B(){
+            return obj
+        };
+        // let a = new A();
+        // let b = new B();
+
+        //alert (new A() == new B())
+
+        //asignment2
+        // function Calculator(){
+        //     this.read = function(){
+        //         this.a = +prompt('input value 1');
+        //         this.b = +prompt('input value 2')
+        //     }
+        //     this.sum = function(){
+        //         return this.a + this.b
+        //     }
+        //     this.mul = function(){
+        //         return this.a * this.b
+        //     }
+        // }
+        // let user = new Calculator();
+        // console.log (user)
+        // user.read()
+        // alert(user.sum())
+
+
+        //assignment 3
+        let currentValue = 0
+        function Accumulator(startingValue){
+            this.read = function(){
+                this.value += +prompt('input a number');
+                //return this
+            }
+            this.value = startingValue;
+        }
+        let accumulator = new Accumulator(1)
+        console.log(accumulator)
+        accumulator.read();
+        accumulator.read();
+        alert(accumulator.value)
+    </script>
+</body>
+</html>
