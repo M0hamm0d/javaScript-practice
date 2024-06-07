@@ -24,12 +24,16 @@
             age: 30,
             'like bird': true,
         }
-        console.log(user.name);
-        user.isAdmin = true;
-        console.log(user.isAdmin);
-        delete user.isAdmin
-        console.log(user.isAdmin);
-        console.log(user['like bird'])
+        for (let key in user){
+            console.log(user[key])
+        }
+
+        // console.log(user.name);
+        // user.isAdmin = true;
+        // console.log(user.isAdmin);
+        // delete user.isAdmin
+        // console.log(user.isAdmin);
+        // console.log(user['like bird'])
 
         //computed property
         //syntax
@@ -239,6 +243,20 @@
         }
         console.log (maker.ref())
 
+
+
+        //symbol type in javascript
+        // a symbol is a primitive unique value
+        let id1 = Symbol('cat');
+        let id2 = Symbol('cat')
+        console.log(id1 === id2)//false(symbols are unique)
+
+        let currentUser = {
+            name: 'Muhammad',
+        }
+        let id = Symbol('id');
+        currentUser[id] = 1;
+        //alert(user[id]);
     </script>
 </body>
 </html>
