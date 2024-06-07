@@ -115,7 +115,7 @@
         checkWin(avgD,avgK)
 
         //Exercise
-        function describeCountry(country, population, capitalCity){
+        /*function describeCountry(country, population, capitalCity){
             return`${country} has ${population} million people and its capital city is ${capitalCity}`
         };
         const descNigeria = describeCountry('Nigeria', 200, 'Abuja');
@@ -127,7 +127,43 @@
         changeColor(grandParent)
         function changeColor(element){
             element.style.backgroundColor = '#333'
+        } */
+
+
+        //Assignment 
+        function greet(name){
+            if(!name ? console.log('Hi, there'):console.log (`Hello, ${name}`));
         }
+        greet();
+
+        function convertToFahrenheit(celsius){
+            let Fahrenheit = (((celsius*9)/5)+32)
+            return Fahrenheit
+        }
+        let convert = convertToFahrenheit(25)
+        console.log(convert) 
+        let conversionNumber = 1.6
+        function convertLength(length, from, to){
+            if (from == 'miles' && to == 'km'){
+              return `${length * 1.6} km`
+            } else if (from == 'km' && to == 'miles'){
+                return `${length / 1.6} miles`
+            } else if (from == 'miles' && to == 'ft'){
+                return `${length * 5280} ft`
+            } else if (from == 'km' && to == 'ft'){
+                return `${length * 3281} ft`
+            } else if (from == 'km' && to == 'km'){
+                return length + to
+            } else if (from !== 'km' && to !== 'km'){
+                return `Invalid unit:${from}`
+            } 
+        }
+        console.log(convertLength(50, 'miles', 'km'));
+        console.log(convertLength(32, 'km', 'miles'));
+        console.log(convertLength(50, 'km', 'km'));
+        console.log(convertLength(5, 'miles', 'ft'))
+        console.log(convertLength(5, 'km', 'ft'));
+        console.log(convertLength(50, 'lb', 'lb'))
     </script>
 </body>
 </html>
