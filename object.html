@@ -8,6 +8,35 @@
 <body>
     <h1>I'm learning Object</h1>
     <script>
+        //const object1 = reference
+
+        const basketballPlayer = {
+            name: 'Basketball',
+            price: 2095
+        };
+        basketballPlayer.price += 500;
+        basketballPlayer['delivery-time'] = '3 days';
+        console.log(basketballPlayer);
+
+        function comparePrice(product1,product2){
+            if (product1.price < product2.price){
+                return product1
+            } else {
+                return product2
+            }
+        }
+        const soapPrice = {
+            name: 'soap',
+            price: 550
+        };
+        const curtainPrice = {
+            name: 'curtain',
+            price: 6500
+        };
+        console.log((soapPrice,curtainPrice));
+        console.log((curtainPrice,soapPrice))
+        console.log('GOOD MORNING'.toLowerCase())
+        console.log('hello'.repeat(2))
         //property = {key:value}
         //syntax of object
 
@@ -17,8 +46,35 @@
         // }
         // aboutMe.key = prompt('what is your name');
         // console.log(aboutMe.key)
+        //TASK1
+        function isItEmpty(obj){
+            for (let key in obj){
+                return false
+            } return true
+        }
+        let theSum = 0;
+        let salary = {
+            John: 100,
+            Ann: 160,
+            Pete: 130
+        }
+        for (let key in salary){
+            theSum += salary[key];
+        }
+        console.log(theSum)
 
-
+        let memberOfHouse = {
+            daddy: 'professor Abdussalam',
+            mummy: 'Mrs Abdussalam',
+            children: {
+                firstChild: 'Abdullah',
+                secondChild: 'Maryam',
+                thirdChild: 'Aisha',
+                lastChild: 'Muhammad'
+            }
+        }
+        let cloning = structuredClone(memberOfHouse)
+        alert( cloning.children === memberOfHouse.children)
         let user = {
             name: 'Muhammad',
             age: 30,
@@ -27,6 +83,7 @@
         for (let key in user){
             console.log(user[key])
         }
+        console.log(user.noSuchProperty === undefined)//true
 
         // console.log(user.name);
         // user.isAdmin = true;

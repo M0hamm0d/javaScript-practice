@@ -8,6 +8,16 @@
 <body>
     <h1>I'm learning object method</h1>
     <script>
+        let users = {name: 'Jamiu'};
+        let admins = {name: 'Admin'}
+
+        function thisIs(){
+            alert(this.name)
+        }
+        users.f = thisIs;
+        admins.f = thisIs;
+        console.log(users.f()) 
+
         const jonas = {
             firstName: 'Muhammad',
             lastName: 'Abdussalam',
