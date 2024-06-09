@@ -7,7 +7,78 @@
 </head>
 <body>
     <h1>HELLO, I'M CURRENTLY LEARNING VARIABLE</h1>
+    <p>Cart Quantity</p>
+    <button onclick="
+        console.log(`Cart Quantity: ${cartQuantity}`)    
+    ">
+        Show Quantity
+    </button>
+    <button onclick="
+        updateQuantity(+1);
+    ">
+        Add to Cart
+    </button>
+    <button onclick="
+        updateQuantity(+2);
+    ">
+        +2
+    </button>
+    <button onclick="
+        updateQuantity(3);
+    ">
+        +3
+    </button>
+    <button onclick="
+        updateQuantity(4);
+    ">
+        +4
+    </button>
+    <button onclick="
+        updateQuantity(5);
+    ">
+        +5
+    </button>
+    <button onclick="
+        updateQuantity(-1);
+    ">
+        remove from cart
+    </button>
+    <button onclick="
+        updateQuantity(-2);
+    ">
+        -2
+    </button>
+    <button onclick="
+        updateQuantity(-3);
+    ">
+        -3
+    </button>
+    <button onclick="
+        cartQuantity = 0;
+        console.log('cart was reset')
+        console.log(`Cart Quantity: ${cartQuantity}`)
+    ">
+        Reset Cart
+    </button>
+
     <script>
+        //Super Simple Dev
+        let cartQuantity = 0;
+
+        function updateQuantity(increment){
+            if(cartQuantity + increment > 10){
+            console.log('cart is full');
+            return;
+            } 
+            if (cartQuantity + increment < 0){
+                cartQuantity += increment;
+                return
+            } else {
+                cartQuantity = cartQuantity + increment
+                console.log(`Cart Quantity: ${cartQuantity}`)
+            }
+        }
+        //Super Simple Dev
         // console.log (alert ('how are you doing'));
         let message = 'Hello word'
         // alert (message);
