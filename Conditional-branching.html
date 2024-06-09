@@ -16,6 +16,30 @@
         <li>passed</li>
     </ul>
     <script>
+        //SuperSimpleDev courseBegin
+
+        //You cannot save an if else statement in a variable but you can save ternary operator in a variable Example
+
+        let result = true? 'Truthy': 'falsy'
+        console.log(result)//Truthy
+
+        let hour = 10;
+        let name = 'Muhammad'
+        if (hour >= 6 && hour <=12 ){
+            console.log(`Good morning ${name}`);
+        } else if (hour >= 12 && hour <=17 ){
+            console.log(`Good afternoon ${name}`);
+        } else{
+            console.log(`Good night ${name}`);
+        } 
+        
+        //Task 2
+        let Age = 70;
+        let isHoliday = true
+        let discountApplied = (Age<= 6 || Age >= 65)&& !isHoliday? console.log('Discount'):console.log('No discount');
+        console.log(discountApplied)
+
+        //SuperSimpleDev courseEnd
         let elem = document.getElementById('hitag');
         elem.style.backgroundColor = 'red';
 
