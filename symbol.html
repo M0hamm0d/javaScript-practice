@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //symbol are unique property
+        //Symbol are skipped in for..in loop
+        //Example
+        let stuId = Symbol('studentId');
+        let student = {
+            firstName: 'Muhammad',
+            lastName: 'Abdussalam',
+            [stuId]: 11011, 
+        }
+        console.log(student);
+        for (let key in student){
+            console.log(key, student[key])//stuId is hidden
+        }
+
+        //The only way to access symbol
+        console.log(student[stuId])//11011
+
+        //What is global symbol:If we want two symbol to be the same. Example
+        //Symbol.for(key): if exist, read and return, if doesnt exist in global registry, create a new onein the registry with given key
+
+        let id = Symbol.for('id');
+        let idAgain = symbol.for('id');
+        console.log(id === idAgain)//true
+
+        //but
+        let id1 = Symbol('id');
+        let id2 = symbol('id');
+        console.log(id1 === id2)//false
+
+
+        //system symbol
+
+    </script>
+</body>
+</html>
