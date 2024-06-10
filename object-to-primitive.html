@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Hints: decides wether to convert to string or to number
+        let user = {
+            name: 'Muhammad Abdul',
+            gender: 'Male',
+            age: '30 years',
+        } 
+        //alert(user) //[object Object]
+
+        let obj = {
+            lastName: 'something',
+            [user]: 'whatever' 
+        }
+        console.log(obj)//{lastName: 'something', [object Object]: 'whatever'}
+        console.log(obj[user])//whatever
+
+        //alert((0.1 + 0.2).toFixed(1)  == 0.3.toFixed(1))
+
+        //let num1 = +prompt('Enter a number');
+        //let num2 = +prompt('num2')
+        //alert(num1 + num2)
+        //alert (6.35.toFixed(1))
+
+        // function function1(){
+        //     let num;
+        //     do {
+        //         num = prompt()
+        //     } while (!isFinite(num))
+        //     return num
+        //     // if (num === null || num === ''){
+        //     //     return
+        //     // } else return +num
+        // }
+        //alert(function1());
+        function random(min,max){
+           return min + Math.random() * (max - min)
+        }
+        //alert( random(1,5));
+        function randomInteger(min, max){
+            return Math.round(min - 0.5 + Math.random() * (max - min + 1))
+        }
+        //alert(randomInteger(1,5));
+        //alert(randomInteger(1,5));
+        //alert(randomInteger(1,5));
+
+        function checkValidNumber(){
+            let number = parseFloat(prompt('input a number'));
+            return number? number:checkValidNumber()
+        }
+        alert(checkValidNumber())
+    </script>
+</body>
+</html>
