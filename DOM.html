@@ -12,12 +12,42 @@
             color: #3c763d;
             background-color: #dff0d8;
         }
+        #subscribe-btn{
+            background-color: black;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 800;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="div"></div>
+
+        <p>Youtube Subscribe button</p>
+        <button id="subscribe-btn" onclick="subscribe()">
+            Subscribe
+        </button>
+        <button class="nine-a">9a</button>
+        <button class="nine-b">9b</button>
+        <button id="head" onclick="headPick()">heads</button>
+        <button id="tail" onclick="tailPick()">tails</button>
+        <p class="picks"></p>
+        <div class="" style="display: flex;">
+            <input type="text" id="the-input" placeholder="Name" onkeydown="submitBtn()">
+            <button onclick="onKeyDown(event)">Submit</button>
+        </div>
+        <p id="display-name"></p>
+
+        <input type="text" placeholder="input something" id="js-input" onkeyup="
+            document.querySelector('#type').innerHTML = document.querySelector('#js-input').value
+        ">
+        <p id="type"></p>
+
+
+        <!-- <div class="div"></div>
         <ul id="ul">
             <li class="list-item">First</li>
             <li class="list-item">Second</li>
@@ -29,11 +59,44 @@
             <li id="one">1</li>
             <li id="two">4</li>
         </ul>
-        <div id="div">blue</div>
+        <div id="div">blue</div> -->
         <!-- <input id="theid" type="text">
         <button onclick="appendToDisplay(1)">1</button> -->
     </div>
     <script>
+        function onKeyDown(event){
+            if (event.key === 'Enter'){
+                submitBtn()
+            }
+        }
+        function submitBtn(){
+            let input = document.querySelector('#the-input');
+            let inputValue = input.value;
+            document.querySelector('#display-name').innerHTML = `Your name is: ${inputValue}`
+        }
+        function headPick(){
+            let picks = document.querySelector('.picks');
+            picks.textContent = 'You pick: Head'
+        }
+        function tailPick(){
+            let picks = document.querySelector('.picks');
+            picks.textContent = 'You pick: Tail'
+        }
+        console.log(document.querySelector('.nine-a'));
+        document.querySelector('.nine-b').textContent = '9b done'
+
+        function subscribe(){
+            if (document.body.querySelector('#subscribe-btn').innerHTML === 'Subscribe'){
+                document.body.querySelector('#subscribe-btn').innerHTML = 'Subscribed';
+                document.body.querySelector('#subscribe-btn').style.background = '#F0F0F0';
+                document.body.querySelector('#subscribe-btn').style.color = 'black'
+            } else {
+                document.body.querySelector('#subscribe-btn').innerHTML = 'Subscribe';
+                document.body.querySelector('#subscribe-btn').style.background = 'black';
+                document.body.querySelector('#subscribe-btn').style.color = 'white'
+            }
+        }
+
         div.style.cssText = `color:red; font-size:20px;width:100px; background-color:blue;`
         div.style.margin = '10px'
         document.body.style.background = 'red';
