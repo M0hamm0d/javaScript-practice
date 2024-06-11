@@ -7,9 +7,10 @@
 </head>
 <body>
     <h1>HELLO, I'M CURRENTLY LEARNING VARIABLE</h1>
-    <p>Cart Quantity</p>
+    <p id="cartQuantity"></p>
     <button onclick="
-        console.log(`Cart Quantity: ${cartQuantity}`)    
+        console.log(`Cart Quantity: ${cartQuantity}`)
+        document.querySelector('#cartQuantity').innerHTML = `Cart Quantity: ${cartQuantity}`
     ">
         Show Quantity
     </button>
@@ -67,7 +68,8 @@
 
         function updateQuantity(increment){
             if(cartQuantity + increment > 10){
-            console.log('cart is full');
+            //console.log('cart is full');
+            document.querySelector('#cartQuantity').innerHTML = 'cart is full'
             return;
             } 
             if (cartQuantity + increment < 0){
@@ -75,7 +77,8 @@
                 return
             } else {
                 cartQuantity = cartQuantity + increment
-                console.log(`Cart Quantity: ${cartQuantity}`)
+                // console.log(`Cart Quantity: ${cartQuantity}`)
+                document.querySelector('#cartQuantity').innerHTML = `Cart Quantity: ${cartQuantity}`
             }
         }
         //Super Simple Dev

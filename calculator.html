@@ -6,6 +6,7 @@
     <title>Calculator</title>
 </head>
 <body>
+    <input type="text" placeholder="" id="input">
     <p>
         <button onclick="updateCalculation('1')">1</button>
         <button onclick="updateCalculation('2')">2</button>
@@ -27,17 +28,18 @@
     <p>
         <button onclick="updateCalculation('0')">0</button>
         <button onclick="updateCalculation('.')">.</button>
-        <button onclick="calculation = eval(calculation); console.log(calculation)">=</button>
+        <button onclick="calculation = eval(calculation); document.querySelector('#input').value = calculation">=</button>
         <button onclick="updateCalculation(' / ')">/</button>
     </p>
     <p>
-        <button onclick="calculation = ''; console.log(calculation); localStorage.setItem('calculation', calculation)">clear</button>
+        <button onclick="calculation = ''; document.querySelector('#input').value = calculation; localStorage.setItem('calculation', calculation)">clear</button>
     </p>
     <script>
         let calculation = localStorage.getItem('calculation');
         function updateCalculation(value){
             calculation+=value;
-            console.log(calculation);
+            //console.log(calculation);
+            document.querySelector('#input').value = calculation
             localStorage.setItem('calculation', calculation)
         }
     </script>
