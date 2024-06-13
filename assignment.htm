@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .js-btn{
+            padding: 10px 25px;
+            border: none;
+            font-weight: 700;
+            border-radius: 5px;
+        }
+        .toggled{
+            background-color: black;
+            color: white;
+        }
+        .btn-container{
+            background-color: white;
+            padding: 10px;
+            border: 1px solid black;
+            width: fit-content;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="">
+        <button class="js-button" onclick="">Test</button>
+    </div>
+    <button class="is-toggled js-btn" onclick="isToggled()">
+        Gaming
+    </button>
+    <div class="btn-container">
+        <button class="gaming-toggle js-btn" onclick="isToggle('.gaming-toggle')">
+            Gaming
+        </button>
+        <button class="music-toggle js-btn" onclick="isToggle('.music-toggle')">
+            Music
+        </button>
+        <button class="tech-toggle js-btn" onclick="isToggle('.tech-toggle')">
+            Tech
+        </button>
+    </div>
+
+
+    <script>
+        function isToggled(){
+            const isToggled = document.querySelector('.is-toggled');
+            if (!isToggled.classList.contains('toggled')){
+                isToggled.classList.add('toggled')
+            } else{
+                isToggled.classList.remove('toggled')
+            }
+        }
+        function isToggle(selector){
+            //all button can be pressed at once
+            // const isToggle = document.querySelector(selector);
+            // if (!isToggle.classList.contains('toggled')){
+            //     isToggle.classList.add('toggled')
+            // } else{
+            //     isToggle.classList.remove('toggled')
+            // }
+            //only one button can be on at once
+            const isToggle = document.querySelector(selector);
+            const previousBtn = document.querySelector('js-btn')
+            if (!isToggle.classList.contains('toggled')){
+                turnOffPreviousBtn()
+                isToggle.classList.add('toggled')
+            } else{
+                isToggle.classList.remove('toggled')
+            }
+        }
+        function turnOffPreviousBtn(){
+            let previousBtn = document.querySelector('.toggled')
+            if(previousBtn){
+                previousBtn.classList.remove('toggled')
+            }
+        }
+        const button = document.querySelector('.js-button')
+        console.log(button.classList.contains('js-button'))//true
+    </script>
+</body>
+</html>

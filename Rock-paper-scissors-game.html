@@ -59,10 +59,18 @@
         function calculate(){
             let inputElement = document.querySelector('#input');
             let cost = inputElement.value
-            if(cost < 40 ){
-                cost = (+cost + 10).toFixed(2)
+            if(cost < 40 && cost >= 0 ){
+                cost = (+cost + 10).toFixed(2);
+                document.querySelector('#final-calc').innerHTML = `$${cost}`;
+            } else if (cost < 0){
+                //document.querySelector('#final-calc').innerHTML = `$${cost}`;
+                let error = document.querySelector('#final-calc');
+                error.style.color = 'red';
+                error.innerHTML = `Error: cost cannot be less than $0`;
             }
-            document.querySelector('#final-calc').innerHTML = `$${cost}`;
+        }
+        function ucFirst(name){
+            let name = name[0].toUpperCase
         }
 
         function pickComputerMove(){
