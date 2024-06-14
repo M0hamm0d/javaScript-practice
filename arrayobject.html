@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //syntax
+        let fruit = ['apple', 'drink', 'lemon'];
+        fruit[0] = 'Pear'//changed the first value to pear ['pear', 'drink', 'lemon']
+        //to access the last element we use fruit[fruit.length-1]
+        console.log(fruit)// apple, drink, lemon
+        console.log(fruit[fruit.length-1])//lemon
+        //or fruits.at(-1)
+
+        //an array store element of any type
+        let differentValue = ['Apple', {name: 'John'}, function(){console.log('hello')}]
+
+        //array methods
+        //pop(): remove the last element
+        //push(): add the element to the end of the array
+        //shift(): remove the first element
+        //unshift(): add the element to the beginning of the array
+        //example
+        let familyMember = ['Muhammad', 'Aisha','Maryam', 'Abdullah'];
+        familyMember.pop();
+        console.log(familyMember);
+        //['Muhammad', 'Aisha','Maryam']
+        console.log(familyMember.push('Abdullah'))//['Muhammad', 'Aisha','Maryam', 'Abdullah']
+        familyMember.shift()
+        console.log(familyMember)
+        //[ 'Aisha','Maryam', 'Abdullah']
+        console.log(familyMember.unshift('Muhammad'))//['Muhammad', 'Aisha','Maryam', 'Abdullah'];
+
+        //loops
+        let arr = ["Apple", "Orange", "Pear"];
+        for (let i = 0; i < arr.length; i++){
+            console.log(arr[i]);
+        }
+        for (let array of arr){
+            console.log(array)
+        }
+
+        //array operation
+        let style = ['Jazz','Blues']
+        style.push('Rock-n-Roll')
+        style[Math.floor((style.length - 1) / 2)] = "Classics";
+        console.log(style)
+        console.log(style.pop())
+        style.unshift('Rap', 'Reggae')
+        console.log(style)
+        //sum input number
+        function sumInput(){
+            let results = [];
+            while (true){
+                value = prompt('input a number');
+                if (value == ''||value == null)break;
+                results.push(+value)
+            }
+            let sum = 0;
+            for (let result of results){
+                sum += result
+            }
+            return sum
+        }
+        console.log(sumInput())
+    </script>
+</body>
+</html>
