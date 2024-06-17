@@ -90,6 +90,74 @@
         console.log(AbFam3)//Maryam and Aisha
 
         //3. concat
+
+        let users = [
+            {id:1, name: 'john'},
+            {id:2, name: 'james'},
+            {id:3, name: 'Mary'},
+        ];
+        //let user = users.find(item => item.id == 1);
+        let user = users.find(function(item){
+            return item.id == 1
+        });
+        console.log(user.name);
+        let useR = users.findIndex(item => item.name == 'james');
+        console.log(useR);
+
+        let insideUser = users.filter(item => item.id > 1);
+        console.log(insideUser)
+
+        const cities = ['madrid', 'vancouver', 'mumbai', 'new york'];
+        let mCity = cities.filter(item => item.startsWith('m'));
+        console.log(mCity) 
+
+        const practice = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+        const evenNumber = practice.filter((even) => {
+            if (even % 2 === 0){
+                return true
+            }
+        });
+        console.log(practice);
+        console.log(evenNumber);
+
+        const countries = ['france', 'South Africa', 'Brazil', 'United State', 'Sweden'];
+        const country = countries.filter((item) => item.includes(' '));
+        console.log(countries);
+        console.log(country);
+
+        //array.map 
+        const array1 = [1, 5, 6, 9];
+        let map1 = array1.map(item => item * 2);
+        console.log(array1);
+        console.log(map1);//2,10,12,18
+
+        const bools = ['true', 'true', 'false', 'true' ,'false', 'false' ];
+        const boolsMap = bools.map(item => {
+            if (item === 'true'){
+                return Math.random()
+            }
+                return 0
+        })
+        console.log(boolsMap);
+
+        const prices = [1, 23, 19, 99, 85, 2, 32, 87, 8, 5, 2];
+        const taxedPrice = prices.map(item => {
+            if(item > 10){
+             return Math.round(item * 1.2)
+            } 
+            return item
+        })
+        console.log(taxedPrice);
+
+        const items = ['light', 'banana', 'phone', 'book', 'mouse'];
+        const plurals = items.map(item => {
+            if(item === 'mouse'){
+                return 'mice'
+            } else {
+                return item + 's'
+            }
+        })
+        console.log(plurals);
     </script>
 </body>
 </html>
