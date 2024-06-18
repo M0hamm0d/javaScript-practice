@@ -120,6 +120,14 @@
         console.log(practice);
         console.log(evenNumber);
 
+        let Prices = [1.23, 19.99, 85.2, 32.87, 8, 5.2];
+        const lowPrices = Prices.filter(item => {
+            if (item * 1.15 < 10){
+                return item * 1.15
+            }
+        }) 
+        console.log(lowPrices);
+
         const countries = ['france', 'South Africa', 'Brazil', 'United State', 'Sweden'];
         const country = countries.filter((item) => item.includes(' '));
         console.log(countries);
@@ -158,6 +166,153 @@
             }
         })
         console.log(plurals);
+        /*if (a > b) return 1; // if the first value is greater than the second
+        if (a == b) return 0; // if values are equal
+        if (a < b) return -1; // if the first value is less than the second
+        arr.sort if result is negative a is sorted before b
+        */
+        let ar = [1, 3, 6];
+        let sortAr = ar.sort((a, b) => a - b)
+
+        let names = 'Bilbo, Gandalf, Nazgul';
+
+        let Arr = names.split(', ');
+        for (let key of Arr){
+            console.log([key]);
+        }
+        console.log(Arr);
+
+        const values = [[1, 2, 3], [0, 0, 1], [3, 6, 9], [0, 1, 2]];
+        const hasTwos = values.filter(item => {
+            if (item.includes(2)){
+                return true
+            }
+                return false
+        });
+        console.log(hasTwos);
+
+        const nums = [10, 20, 30, 40, 50];
+        const timesTwo = nums.map(item => item*2)
+        const over50 = timesTwo.filter(item => item > 50);
+        console.log(nums);
+        console.log(timesTwo);
+        console.log(over50);
+
+        //Task 1//[background, color]
+        function camelize(str){
+            return str
+            .split('-')
+            .map((word, index) => index == 0? word: word[0]
+            .toUpperCase() + word.slice(1)).join('')
+        }
+        console.log(camelize('background-color'));
+
+        //Task 2
+        let aR = [5, 3, 8, 1];
+        /*function filterRange(aR, a, b){
+            let filter = aR.filter(item => {
+                if (item > a && item < b){
+                    return true
+                }
+            }) 
+            return filter
+        };
+        let answer = filterRange(aR, 2, 8);
+        console.log(answer);
+        */
+        function filterRangeInPlace(aR, a, b){
+            let filter = aR.filter(item => {
+                if (item > a && item < b){
+                    return true
+                }
+            }) 
+            aR = filter
+            return filter
+        }
+        let answer = filterRangeInPlace(aR, 2, 8);
+        console.log(aR)
+        console.log(answer);
+        let myArray = [5, 2, 1, -10, 8];
+        let tt = myArray.sort((a,b) => b - a )
+        console.log(tt)
+
+        //task 4
+        let value =["HTML", "JavaScript", "CSS"];
+
+        function copySorted(arr){
+            return arr.sort((a, b) => a.localeCompare(b))
+        }
+        console.log(copySorted(value));
+
+        //task 4
+        let john = { name: "John", surname: "Smith",  age: 25, id: 1};
+        let pete = { name: "Pete", surname: "Smith", age: 30, id: 2};
+        let mary = { name: "Mary", surname: "Smith", age: 28, id: 3};
+
+        let Users = [ pete, john, mary ];
+        //let  name = Users.map(item => item.name);
+        //console.log(name);
+
+        let userMapped = Users.map(item => ({
+            fullName: `${item.name} ${item.surname}`,
+            id: item.id
+        }));
+        console.log(userMapped);
+        function sortByAge(arr){
+            arr.sort()
+        }
+        //sort(function(a, b) 
+        function sortByAge(arr){
+            return arr.sort((a,b) => a.age - b.age)
+        }
+        console.log(sortByAge(Users));
+
+        let AR = [3, 2, 1];
+        function shuffleArray(arr) {
+            let options = Math.random();
+            if (options < (1/3)){
+                return arr.sort((a, b) => b - a)
+            } else if (options > (1/3) && options < (2/3)){
+                return arr.sort((a, b) => a - b)
+            } else if (options > (2/3)){
+                return arr.sort((a, b) => b - a)
+            }
+        }
+        console.log(shuffleArray(AR));
+        console.log(shuffleArray(AR));
+
+        function getAverageAge(users){
+            return users.reduce((sum, current) => sum + current.age, 0)/(users.length);
+        }
+        console.log(getAverageAge(Users));
+
+
+        let strings = ["Hare", "Krishna", "Hare", "Krishna",
+        "Krishna", "Krishna", "Hare", "Hare", ":-O"
+        ];
+        function unique(arr) {
+            let total = [];
+            for (str of strings){
+                if (!total.includes(str)){
+                    total.push(str)
+                }
+            }
+            return total
+        }
+        console.log(unique(strings));
+        let USERS = [
+            {id: 'john', name: "John Smith", age: 20},
+            {id: 'ann', name: "Ann Smith", age: 24},
+            {id: 'pete', name: "Pete Peterson", age: 31},
+        ];
+        function groupById(arr) {
+            let userById = {};
+            for (let array of arr){
+                userById[array.id] = array
+            }
+            return userById
+        }
+        console.log(groupById(USERS));
     </script>
 </body>
 </html>
