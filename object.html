@@ -318,6 +318,44 @@
         let id = Symbol('id');
         currentUser[id] = 1;
         //alert(user[id]);
+
+
+        let myPet = {
+            name: 'Sudo',
+            type: 'Dog',
+            breed: 'Poodle',
+            age: '7',
+            friends: ['bit', 'byte', 'Data']
+        }
+        myPet.color = 'black';
+        myPet.breed = 'beagle';
+        myPet.friends.pop();
+        myPet.friends.push('Chip');
+        console.log(myPet);
+
+        const banana = {name: 'banana', quality: 1, price: 1.95};
+        const apple = {name: 'apple', quality: 1, price: 1.45};
+        const candy = {name: 'candy', quality: 1, price: 3.50}
+        let store = {
+            storeNumber: 5,
+            locationCity: 'Milan',
+            locationCountry: 'Italy',
+            products: [banana, apple, candy]
+        };
+        console.log(store.products);
+        console.log(store.products[2]);
+        store.products[2].price = 4.99;
+        console.log(store.products[2]);
+        //sum, current
+        let myConsole = {
+            log: (message)=>{console.log(message)}
+        }
+        myConsole.log('hi there')
+
+
+
+
+
     </script>
 </body>
 </html>

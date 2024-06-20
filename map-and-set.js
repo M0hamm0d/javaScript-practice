@@ -177,3 +177,4 @@ for (let i = 0; i < items.length; i++){
     duplicate.add(items[i].name)
 }
 console.log(result);
+
