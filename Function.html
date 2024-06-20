@@ -178,6 +178,91 @@
         console.log(convertLength(5, 'miles', 'ft'))
         console.log(convertLength(5, 'km', 'ft'));
         console.log(convertLength(50, 'lb', 'lb'))
+
+
+        function chill(){
+            console.log('doing some chilling');
+            for (let i = 0; i < 11; i++){
+                console.log(`chill ${[i]}`)
+            }
+            console.log('That was ice cold')
+        }
+        console.log(chill());
+
+        function noRemainder(number, mod){
+            if (number % mod == 0){
+                return true
+            }
+            return false
+        }
+        //console.log(noRemainder(3,2))
+
+        function login(username, password) {
+            if (username === 'admin' && password){
+                return true
+            } else if (username === 'monkey' && password == '123'){
+                return true
+            } else if (username === 'moomoo' && password === 'farm'){
+                return true
+            } else {
+                return false
+            }
+        }
+        console.log(login('admin', '50'));
+        console.log(login('ad', '50'));
+
+        function square(num1) {
+            return num1**2
+        }
+        function squareOfSquare(num1, num2) {
+            return square(num1) + square(num2)
+        };
+        console.log(squareOfSquare(2, 3));
+        console.log(squareOfSquare(3, 4));
+
+
+        // function checkAge(age) {
+        //     return age > 18? true: confirm('did your parent allow you?');
+        // }
+        function checkAge(age) {
+            if (age > 18 || confirm('did your parent allow you?')){
+                return true
+            }
+        }
+        console.log(checkAge(19));
+
+        function min(a, b) {
+            if (a > b){
+                return b
+            }
+            return a
+        }
+        console.log(min(2, 5));
+        function pow(a, b) {
+            return a ** b
+        }
+        console.log(pow(3, 3));
+
+        let calcAverage = (num1, num2, num3)=>{
+            return ((num1 + num2 + num3)/3)
+        } 
+        //let scoreDolphin = calcAverage(44, 23, 71);
+        //let scoreKoalas = calcAverage(65, 54, 49);
+        let scoreDolphin = calcAverage(185, 154,141);
+        let scoreKoalas = calcAverage(23, 34, 27);
+        console.log(scoreKoalas);
+        function checkWinner(avgDolphin, avgKoalas) {
+            if (avgDolphin >= avgKoalas * 2){
+                return `Koalas wins ${avgDolphin} vs. ${avgKoalas}`
+            } else if (avgKoalas >= avgDolphin * 2){
+                return `Koalas wins ${avgKoalas} vs. ${avgDolphin}`
+            } 
+            else{
+                return 'No team wins'
+            }
+            
+        } 
+        console.log(checkWinner(scoreDolphin, scoreKoalas))
     </script>
 </body>
 </html>
