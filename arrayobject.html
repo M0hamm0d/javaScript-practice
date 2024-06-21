@@ -313,6 +313,56 @@
             return userById
         }
         console.log(groupById(USERS));
+
+        const jonas = [
+            'jonas',
+            'Schmedtmann',
+            2037 - 1991,
+            'teacher',
+            ['Michel', 'Peter', 'Steven'],
+            true
+        ];
+        const type = [];
+        for (let i = 0; i < jonas.length; i++){
+            type.push(typeof jonas[i])
+        }
+        console.log(type);
+        let years = [1991, 2007, 1969, 2020];
+        let ages = []
+        for (let i = 0; i < years.length; i++){
+            let calcAge = 2024 - years[i];
+            ages.push(calcAge)
+        }
+        console.log(ages);
+
+
+        let billValue = calcTip(100);
+        let bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52]
+        let tip = [];
+        let totals = [];
+
+        function calcTip(bill) {
+            if(bill > 50 && bill < 300){
+                return Math.round(bill*0.15)
+            } else{
+                return Math.round(bill*0.2)
+            }
+        }
+        for (let i = 0; i < bills.length; i++){
+            tip.push(calcTip(bills[i]));
+            totals.push(calcTip(bills[i] + tip[i]))
+        }
+        console.log(tip);
+        console.log(totals);
+        let rr = [2, 3, 7]
+        function calculateAverage(arr) {
+            let theSum = 0;
+            for (let i = 0; i < arr.length; i++){
+                theSum += arr[i]
+            }
+            return theSum/arr.length
+        }
+        console.log(Math.round(calculateAverage(rr)));
     </script>
 </body>
 </html>
