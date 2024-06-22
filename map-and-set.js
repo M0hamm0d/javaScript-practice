@@ -3,10 +3,10 @@ map.set('name', 'Muhammad');
 //console.log(map.get('name'));//Muhammad
 map.set('age', 25);
 //console.log(map.size);//2
-console.log(map)
-for (let key of map.keys()){
-    console.log(key);
-}
+//console.log(map)
+// for (let key of map.keys()){
+//     console.log(key);
+// }
 /*for (let key of map.values()){
     console.log(key);//Muhammad, 25
 };
@@ -127,7 +127,7 @@ let houseForSale = new Map ([
 //houseForSale.delete('built');
 //console.log(houseForSale);
 houseForSale.get('owner').age = 30;
-console.log(houseForSale);
+//console.log(houseForSale);
 [296000, 295000, 315000, 312000].reduce((sum, current)=> {
     sum + current
 }, 0)
@@ -140,10 +140,10 @@ function unique(arr) {
 let values = ["Hare", "Krishna", "Hare", "Krishna",
     "Krishna", "Krishna", "Hare", "Hare", ":-O"
 ];
-console.log(unique(values));
+//console.log(unique(values));
 
 let numbers = new Set([1,2,3,4,5,2,3,4]);
-console.log(numbers);
+//console.log(numbers);
 let points = [10, 20, 10, 30, 15, 15, 35, 16, 10];
 function uN(arr){
     let Values = [];
@@ -154,7 +154,7 @@ function uN(arr){
     }
     return Values
 }
-console.log(uN(points))
+//console.log(uN(points))
 
 let items = [
     {name: 'banana', quantity: 1, price: 1.95},
@@ -176,5 +176,19 @@ for (let i = 0; i < items.length; i++){
     result.push(items[i]);
     duplicate.add(items[i].name)
 }
-console.log(result);
+//console.log(result);
+
+
+const orderSet = new Set([
+    'Pasta',
+    'Pizza',
+    'Pizza',
+    'Risotto',
+    'Pasta',
+    'Pizza'
+])
+//console.log(orderSet);
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
 
