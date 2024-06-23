@@ -66,96 +66,47 @@ for (const [index, value] of Object.entries(game.odds)){
 //console.log(index, value);
 const teamStr = index === 'x' ? 'Draw' : `Victory ${index}`;
 console.log(`Odd of ${teamStr} ${value}`)
-// console.log(`Odd of victory ${game.team1}: ${value.team1}`);
-// console.log(`Odd of victory Draw: ${value.x}`); 
-// console.log(`Odd of victory ${game.team2}: ${value.team2}`); 
-// console.log(value);  
+};
+const Name = new Map([[1, 6]]);
+console.log(Name);
+// const gameEvents = new Map([
+//   [17, '⚽ Goal'],
+//   [36, '🔁 Substitution']
+//   [47, '⚽ Goal'],
+//   [61, '🔁 Substitution'],
+//   [64, '🟨 Yellow card'],
+//   [69, '🟥 Red card'],
+//   [70, '🔁 Substitution'],
+//   [72, '🔁 Substitution'],
+//   [76, '⚽ Goal'],
+//   [80, '⚽ Goal'],
+//   [92, '🟨 Yellow card'],
+// ]);
+const gameEvents = new Map([
+  [17, '⚽️ GOAL'],
+  [36, '🔁 Substitution'],
+  [47, '⚽️ GOAL'],
+  [61, '🔁 Substitution'],
+  [64, '🔶 Yellow card'],
+  [69, '🔴 Red card'],
+  [70, '🔁 Substitution'],
+  [72, '🔁 Substitution'],
+  [76, '⚽️ GOAL'],
+  [80, '⚽️ GOAL'],
+  [92, '🔶 Yellow card'],
+]);
+const events = [...new Set(gameEvents.values())];
+//console.log(events);
+gameEvents.delete(64);
+//console.log(gameEvents.values());
+console.log(`An event happened, on average, every ${90/gameEvents.size} minutes`);
+const theEvent = gameEvents.entries();
+for (const [time, event] of theEvent){
+  if (time < 45){
+    console.log(`[FIRST HALF] ${time}: ${event}`);
+  } else{
+    console.log(`[SECOND HALF] ${time}: ${event}`);
+  }
+  
 }
-
-// let players1 = [
-//     'Neuer', 
-//     'Pavard', 
-//     'Martinez', 
-//     'Alaba', 
-//     'Davies', 
-//     'Kimmich', 
-//     'Goretzka', 
-//     'Coman', 
-//     'Muller', 
-//     'Gnarby', 
-//     'Lewandowski', 
-// ];
-// let players2 = [
-//     'Burki', 
-//     'Schulz', 
-//     'Hummels', 
-//     'Akanji', 
-//     'Hakimi', 
-//     'Weigl', 
-//     'Witsel', 
-//     'Hazard', 
-//     'Brandt', 
-//     'Sancho', 
-//     'Gotze', 
-// ];
-// let gk = 'Neuer';
-// let fieldPlayers = [
-//     'Pavard', 
-//     'Martinez', 
-//     'Alaba', 
-//     'Davies', 
-//     'Kimmich', 
-//     'Goretzka', 
-//     'Coman', 
-//     'Muller', 
-//     'Gnarby', 
-//     'Lewandowski',
-// ]
-// let allPlayers = [
-//     'Neuer', 
-//     'Pavard', 
-//     'Martinez', 
-//     'Alaba', 
-//     'Davies', 
-//     'Kimmich', 
-//     'Goretzka', 
-//     'Coman', 
-//     'Muller', 
-//     'Gnarby', 
-//     'Lewandowski',
-//     'Burki', 
-//     'Schulz', 
-//     'Hummels', 
-//     'Akanji', 
-//     'Hakimi', 
-//     'Weigl', 
-//     'Witsel', 
-//     'Hazard', 
-//     'Brandt', 
-//     'Sancho', 
-//     'Gotze', 
-// ]
-// let players1Final = [
-//     'Neuer', 
-//     'Pavard', 
-//     'Martinez', 
-//     'Alaba', 
-//     'Davies', 
-//     'Kimmich', 
-//     'Goretzka', 
-//     'Coman', 
-//     'Muller', 
-//     'Gnarby', 
-//     'Lewandowski', 
-//     'Thiago',
-//     'Coutinho',
-//     'Perisic'
-// ]
-
-// let team1 = game.odds.team1;
-// let draw = game.odds.x;
-// let team2 = game.odds.team2;
-// console.log(team1,draw,team2);
-// function printGoals() {
-    
-// }
+//console.log(theEvent);
