@@ -20,7 +20,7 @@
         };
         basketballPlayer.price += 500;
         basketballPlayer['delivery-time'] = '3 days';
-        console.log(basketballPlayer);
+        //console.log(basketballPlayer);
 
         function comparePrice(product1,product2){
             if (product1.price < product2.price){
@@ -37,11 +37,11 @@
             name: 'curtain',
             price: 6500
         };
-        console.log((soapPrice,curtainPrice));
-        console.log((curtainPrice,soapPrice))
-        console.log('GOOD MORNING'.toLowerCase())
-        console.log('hello'.repeat(2))
-        //property = {key:value}
+        // console.log((soapPrice,curtainPrice));
+        // console.log((curtainPrice,soapPrice))
+        // console.log('GOOD MORNING'.toLowerCase())
+        // console.log('hello'.repeat(2))
+        // property = {key:value}
         //syntax of object
 
         // let aboutMe = {
@@ -65,7 +65,7 @@
         for (let key in salary){
             theSum += salary[key];
         }
-        console.log(theSum)
+        //console.log(theSum)
 
         let memberOfHouse = {
             daddy: 'professor Abdussalam',
@@ -78,7 +78,7 @@
             }
         }
         let cloning = structuredClone(memberOfHouse)
-        alert( cloning.children === memberOfHouse.children)
+        //alert( cloning.children === memberOfHouse.children)
         let user = {
             name: 'Muhammad',
             age: 30,
@@ -142,7 +142,7 @@
         let house = {
             [name]: 'Tanke',
         }
-        console.log(house.Kehinde)
+        //console.log(house.Kehinde)
 
         //in Operator, to test weather a property exist or not
         //syntax 'key' in object
@@ -150,8 +150,8 @@
             myName: 'Muhammad',
             myAge: 30,
         }
-        console.log('myName' in myInfo);
-        console.log('myBame' in myInfo)
+        // console.log('myName' in myInfo);
+        // console.log('myBame' in myInfo)
 
         //for.. in loop(to see all the keys and value of object)
         //syntax for (key in object){} EG
@@ -187,7 +187,7 @@
             return true
         };
         let schedule = {};
-        console.log (isEmpty(schedule))
+        //console.log (isEmpty(schedule))
 
         let salaries = {
             John: 100,
@@ -240,8 +240,8 @@
             'likes bird': true,
         }
         jonas['likes bird']
-        let interestedIn = prompt( 'What will you like to know about john?' )
-        console.log (jonas[interestedIn])
+        //let interestedIn = prompt( 'What will you like to know about john?' )
+        //console.log (jonas[interestedIn])
 
         //${firstName} has ${jonas.bestfriend[i]} and his best friend is array[0]
         function empty(obj){
@@ -293,7 +293,7 @@
             title: "My menu"
         };
         check(foodMenu);
-        console.log(foodMenu.Fufu)
+        //console.log(foodMenu.Fufu)
 
         
         let maker = {
@@ -302,7 +302,7 @@
                 return this.name
             }
         }
-        console.log (maker.ref())
+        //console.log (maker.ref())
 
 
 
@@ -354,8 +354,67 @@
 
 
 
+        function makeUser(name, age){
+            return {
+                name: name,
+                age: age
+            }
+        }
+        let User = makeUser('Muhammad', 30);
+        console.log(User); 
 
+        let details = {
+            name: "John",
+            age: 30,
+            isAdmin: true
+        }
 
+        for (let key of Object.entries(details)){
+            console.log(key);
+        }
+
+        for (let key in details){
+            console.log(key);
+        }
+
+        let Schedule = {};
+        function isItEmpty(obj) {
+            for (let key in obj){
+                console.log(false);
+            }
+            console.log(true)
+        }
+        console.log(isItEmpty(Schedule));
+        let result = 0
+        let staffSalaries = {
+            John: 100,
+            Ann: 160,
+            Pete: 130
+        }
+        for (let key of Object.values(staffSalaries)){
+            //console.log(key);
+            result+=key
+        }
+        console.log(result);
+
+        let Menu = {
+            width: 200,
+            height: 300,
+            title: "My menu"
+        };
+        let event = {...Menu}
+        event.width = 700;
+        console.log(event);
+        console.log(Menu);
+        function multiplyNum(num) {
+            for (let key in num){
+                if (typeof num[key] == 'number'){
+                    num[key] *= 2
+                }
+            }
+        }
+        multiplyNum(Menu);
+        console.log(Menu);
     </script>
 </body>
 </html>

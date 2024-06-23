@@ -190,5 +190,47 @@ const orderSet = new Set([
 //console.log(orderSet);
 const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
 const staffUnique = [...new Set(staff)];
-console.log(staffUnique);
+//console.log(staffUnique);
+
+//map 
+const res = new Map();
+res.set('name', 'classico');
+res.set(1, 'Firenze, Italy');
+//console.log(res.set(2,'lisbon, Portugal'));
+res 
+.set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'organic'])
+.set('open', 11)
+.set('close', 23)
+.set(true, 'we are open :d')
+.set(false, 'We are closed :(');
+const time = 21;
+//console.log(res.get(time > res.get('open') && time < res.get('close')))
+const arr = [1, 2]
+res.set(arr, 'Test');
+//console.log(res.get(arr))
+
+
+const question = new Map([
+    ['question', 'What is the best programming language in the world'],
+    [1, 'C'],
+    [2, 'Java'],
+    [3, 'JavaScript'],
+    ['Correct', 3],
+    [true, 'Correct'],
+    [false, 'Try again']
+]);
+//console.log(question);
+console.log(question.get('question'));
+for (let [key, value] of question){
+    if(typeof key === 'number'){
+        console.log(`Answer ${key}: ${value}`);
+    }
+}
+let number = 3;
+let ans = question.get('Correct') === number;
+console.log(question.get(ans));
+//convert map to array
+console.log([...question.entries()]);
+//convert object to map //object.entry
+
 
