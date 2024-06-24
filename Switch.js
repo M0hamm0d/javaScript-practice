@@ -58,3 +58,20 @@ switch(day){
     console.log('There is no such day')
     break;
 }
+
+function ucFirst(str) {
+    return str[0].toUpperCase + str.slice(1)
+  };
+  function checkSpam(strr){
+    if (strr.includes('ViAgRA')||strr.includes('xxx')) return true
+  }
+  function truncate(str, maxlength) {
+    if (maxlength < str.length){
+        return str.slice(0, maxlength - 1) + '...'
+    } else {
+        return str
+    }
+  }
+  //let string = "What I'd like to tell on this topic is:";
+  //console.log(string.length);
+  console.log(truncate("What I'd like to tell on this topic is:", 20)); 

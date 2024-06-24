@@ -35,13 +35,13 @@ for(i = 0 ; i < 3; i++){
     console.log(i);
     if (i === 3)break;//0, 1,2
 }*/
-alert(sum);
+//alert(sum);
 
-for (let i = 2; i <= 10; i++){
-    if(i % 2 == 0){
-        alert(i);
-    }
-}
+// for (let i = 2; i <= 10; i++){
+//     if(i % 2 == 0){
+//         alert(i);
+//     }
+// }
 
 // while (true){
 //     let value = +prompt('input a value greater than 100',0)
@@ -75,3 +75,4 @@ alert(sum)
 // if condition → run body and run step
 //if (i < 3) { alert(i); i++ }
 // ...finish, because now i == 3
+
