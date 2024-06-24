@@ -16,7 +16,7 @@
         }
         users.f = thisIs;
         admins.f = thisIs;
-        console.log(users.f()) 
+        //console.log(users.f()) 
 
         const jonas = {
             firstName: 'Muhammad',
@@ -103,11 +103,11 @@
                 return (this.a * this.b)
             }
         }
-        calculator.read()
+        //calculator.read()
         let sum = calculator.sum()
-        alert (sum) ;
+        //alert (sum) ;
         let mul = calculator.mul()
-        alert (mul)   
+        //alert (mul)   
         
         
         const thor = {
@@ -116,6 +116,33 @@
                 console.log(`${thor.name} says hello`)
             }
         }
+
+        let newUser = {
+            name: "John",
+            age: 30,
+            food: 'Iyan',
+            sayHi(){
+                console.log('hello');
+            },
+            orderFood(){
+                console.log(`The customer want to order ${this.food}`);
+            }
+        };
+        newUser.orderFood();
+
+        let calc = {
+            //a:prompt('value1'),
+            //b:prompt('value 2'),
+            sum(){
+                return this.a + this.b;
+            },
+            read(){
+                this.a = +prompt('value1');
+                this.b = +prompt('value2');
+            },
+        } 
+        calc.read();
+        console.log(calc.sum());
     </script>
 </body>
 </html>
