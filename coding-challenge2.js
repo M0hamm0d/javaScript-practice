@@ -14,6 +14,22 @@ let createUserName = function(value){
 };
 console.log(createUserName(user));
 */
+
+let strings = ["Hare", "Krishna", "Hare", "Krishna",
+    "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
+function unique(arr) {
+    let result = [];
+  
+    for (let str of arr) {
+      if (!result.includes(str)) {
+        result.push(str);
+      }
+    }
+  
+    return result;
+}
+
 let kateValues = [4, 1, 15, 8, 3];
 let juliaValue = [3, 5, 2, 12, 7];
 let checkDog = function(dogsJulia, dogKate){
@@ -30,22 +46,28 @@ let checkDog = function(dogsJulia, dogKate){
 };
 //checkDog(kateValues, juliaValue);
 
+// const calcAverageHumanAge = function(dogAges){
+//     let humanAge = dogAges.map(function(item){
+//         return item <= 2 ? (item * 2):(16 + (item * 4))
+//     });
+//     const adult = humanAge.filter(function(item){
+//         return item >= 18
+//     });
+//     const average = adult.reduce(function(acc, item){
+//         return (acc + item)/adult.length
+//     })
+//     console.log(humanAge);
+//     console.log(adult);
+//     console.log(average);
+// };
+
 const calcAverageHumanAge = function(dogAges){
-    let humanAge = dogAges.map(function(item){
-        return item <= 2 ? (item * 2):(16 + (item * 4))
-    });
-    const adult = humanAge.filter(function(item){
-        return item >= 18
-    });
-    const average = adult.reduce(function(acc, item){
-        return (acc + item)/adult.length
-    })
-    console.log(humanAge);
-    console.log(adult);
-    console.log(average);
+    let humanAge = dogAges
+    .map(item => item <= 2 ? (item * 2):(16 + (item * 4)))
+    .filter(item => item >= 18)
+    .reduce((acc, item, i, arr) => (acc + item)/arr.length);
 };
-//calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
-//console.log(humanAge);
+calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
 function camelize(str){
     return str
     .split('-')
@@ -71,7 +93,14 @@ function getAverageUser(arr) {
     return arr.reduce((acc, item) => acc + item.age, 0)/arr.length
 };
 let users = [john, pete, mary];
-console.log(getAverageUser(users));
+let findDavis  = [];
+for (let acc of users){
+    if (acc.name == 'John'){
+        findDavis.push(acc)
+    } 
+};
+console.log(findDavis);
+//console.log(getAverageUser(users));
 // let names = users.map(item=> ({
 //     fullName: `${item.name} ${item.surname}`, age: item.age}
 // ));

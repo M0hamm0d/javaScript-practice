@@ -1,3 +1,86 @@
+// let salaries = {
+//     "John": 100,
+//     "Pete": 300,
+//     "Mary": 250
+// };
+// let num = 0
+// function sumSalaries(Salaries) {
+//     for(let salary of Object.values(Salaries)){
+//         return Object.values(salaries).reduce((a, b) => a + b, 0) // 650
+//     }
+// };
+// console.log(sumSalaries(salaries));
+let users = {
+  Names: 'John',
+  age: 30,
+  comp: 'black'
+};
+let {Names, ...rest} = users;
+console.log(rest.age);
+function count(user) {
+  return Object.keys(user).length
+};
+//console.log(count(users));
+let options = {
+  size: {
+    width: 100,
+    height: 200
+  },
+  items: ["Cake", "Donut"],
+  extra: true
+};
+function showMenu({
+  size: {
+      width:w,
+      height:h
+  },
+  items:[ing1, ing2],
+  extra
+}){
+  console.log(w, h, ing1, ing2, extra);
+};
+showMenu(options)
+// let {
+//     size: {
+//         width,
+//         height
+//     },
+//     items: [item1, item2],
+//     extra
+// } = options;
+let {size:s, items:i} = options;
+//console.log(s, i);
+//console.log(width, height, item1, item2);
+let user = {
+  name: "John",
+  years: 30
+};
+let {name, years:age, isAdmin = 'false'} = user;
+console.log(name, age, isAdmin);
+let salaries = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250
+};
+// function topSalary(wage){
+//     let maxName = null;
+//     let maxSalary = 0
+//     for (let [name, salary] of Object.entries(wage)){
+//         if (salary > maxSalary){
+//             maxSalary = salary;
+//             maxName = name
+//         }
+//     }
+//     return maxName
+// };
+function topSalary(salaries) {
+  return Object.values(salaries).reduce((acc, item)=>{return acc > item ? acc: item })
+}
+console.log(topSalary(salaries));
+
+
+
+
 const game = { 
     team1: 'Bayern Munich', 
     team2: 'Borrussia Dortmund', 
