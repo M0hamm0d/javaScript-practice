@@ -67,7 +67,8 @@ function createVendingMachine() {
         if (coin == 100){
             let text = Math.round(Math.random()*stocks.length);
             for(let i = 0; i < 1; i++){ 
-                console.log(stocks[text])
+                console.log(`You got ${stocks[text]}`)
+                coin = 0
             }
         } else if (coin < 100){
             let result = 100 - coin;
@@ -77,10 +78,56 @@ function createVendingMachine() {
     return add25
 };
 let i = createVendingMachine();
-i();
-i();
-i();
-i();
-i();
-i();
-i();
+// i();
+// i();
+// i();
+// i();
+// i();
+// i();
+// i();
+
+//EX 4
+
+function createDatabase() {
+    let storage = ['apple', 'banana', 'carrot'];
+    function addToDB(add) {
+        storage.push(add);
+        console.log(storage);
+    }
+    function clearDB() {
+        storage =[];
+        console.log(storage);
+    }
+    return [addToDB, clearDB]
+};
+let [add, del] = createDatabase();
+//add('tomatoes');
+del();
+add('tomatoes');
+//console.log(add);
+//console.log(del);
+
+
+//
+const greet = (greeting) => {
+    return (name) => {
+        console.log(`${greeting}: ${name}`)
+    }
+};
+let greeting = greet('Hello');
+//greeting('Muhammad')
+
+function inArray(arr) {
+    return function(x){
+        arr.includes(x)
+    }
+};
+let arr = [1, 2, 3, 4, 5, 6, 7]
+console.log(arr.filter(inBetween(3, 6)));
+
+function display(param){
+    param()
+};
+display(function(){
+    console.log('Hello there')
+})
