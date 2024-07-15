@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn">answer Poll</button>
+    <script>
+        const poll = {
+            question: 'What is your favorite programming language',
+            options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
+            answer: new Array(4).fill(0),
+            registeredNumber(){
+                let ans =  Number(prompt(`${this.question}\n ${this.options.join('\n')} \n [write the option below]`));
+                if (ans < this.answer.length){
+                    this.answer[ans] ++ 
+                }
+                this.displayResults()
+                this.displayResults('string')
+            },
+            displayResults(type = 'array'){
+                if(type === 'array'){
+                    console.log(this.answer);
+                } else if (type === 'string'){
+                    console.log(`Poll result are ${this.answer.join(',')}`);
+                }
+            }
+        }
+        document.querySelector('.btn').addEventListener('click', poll.registeredNumber.bind(poll));
+        poll.displayResults('string')
+        console.log(poll.registeredNumber());
+        //console.log(poll.answer);
+
+        poll.displayResults.call({answer: [5, 2, 3]})
+    </script>
+</body>
+</html>
