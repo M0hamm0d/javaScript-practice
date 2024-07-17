@@ -79,7 +79,20 @@
             }
         }
         const button = document.querySelector('.js-button')
-        console.log(button.classList.contains('js-button'))//true
+        //console.log(button.classList.contains('js-button'))//true
+
+        const me = {
+            name: 'Sina',
+            talk(){
+                return this
+            }, 
+            arrowTalk:()=>{
+                return this
+            }
+        };
+        console.log(me.talk());
+        console.log(me.arrowTalk());
+
     </script>
 </body>
 </html>
