@@ -7,12 +7,60 @@
 </head>
 <body>
     <script>
+        'use strict'
         let product = {
             title: 'pen',
             price: 100,
             inStock: true
         };
+        console.log(Object.getOwnPropertyDescriptor(product, 'price'));
+        // Object.defineProperty(product, "title", {
+        //     writable: false
+        // })
         console.log(JSON.stringify(product));
+        product.title = 'biro'
+        console.log(product.title);
+        let person = {
+            firstName: 'john',
+            birthYear: 1999,
+            calculateAge: ()=>{
+                console.log('good morning ' + this.firstName);
+            }
+        };
+        let age = person.calculateAge();
+        Object.defineProperty(person, 'firstName', {
+            writable: false
+        });
+        //console.log(Object.getOwnPropertyDescriptor(person, 'firstName'));
+        //for (let key in person) console.log(key);
+        //console.log(person);
+
+
+
+        //GETTERS AND SETTERS
+        let myProperties = {
+            name: "John",
+            surname: "Smith",
+            get fullName(){
+                //do calculation before returning the value
+                return `Mr. ${this.name} ${this.surname}`
+            },
+            set fullName(value){
+                //[this.name, this.surname] = value.split(' ')
+                this.name = value
+            } 
+        };
+        myProperties.fullName = 'Muhammad Abdussalam'
+        console.log(myProperties.fullName);
+
+
+        function add(){
+            let x = 1;
+            function f(y){
+                return x + y
+            }
+            return f(2)
+        }
     </script>
 </body>
 </html>

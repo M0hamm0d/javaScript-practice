@@ -7,112 +7,124 @@
 </head>
 <body>
     <script>
-        function Calc() {
-            this.sum = function(){
-                return this.a + this.b;
-            };
-            this.read = function(){
-                this.a = +prompt('value1');
-                this.b = +prompt('value2');
-            };
-        }
-        let calc = new Calc;
-
-        function Name(name,age,address){
-            this.name = name;
-            this.age = age;
-            this.address = address;
-        };
-        
-        let user01 = new Name(
-            'Muhammad',
-            32,
-            '1, Abdussalam street, Tanke, Ilorin, Kwara Stare'
-        );
-        console.log(user01);
-
-        // let calc = {
-        //     //a:prompt('value1'),
-        //     //b:prompt('value 2'),
-        //     sum(){
+        // function Calc() {
+        //     this.sum = function(){
         //         return this.a + this.b;
-        //     },
-        //     read(){
+        //     };
+        //     this.read = function(){
         //         this.a = +prompt('value1');
         //         this.b = +prompt('value2');
-        //     },
-        // } 
-        calc.read();
-        console.log(calc.sum());
-
-        function Title(title, subtitle) {
-            this.mainTitle = title;
-            this.subtitle = subtitle;
-        }
-        let acc1 = new Title('Hello', 'Muhammad');
-        console.log(acc1);
-        let acc2 = new Title('Welldone', 'Ma');
-        console.log(acc2);
-        function Person(name, age){
-            this.firstName = name,
-            this.age = age
-        }
-        const person1 = new Person('Bill', 30);
-        const person2 = new Person('Muhammad', 23)
-        console.log(person1);
-        console.log(person2)
-
-        function User(name,address){
-            this.name = name,
-            this.address = address
-        };
-        const user1 = new User('Muhammad','Tanke');
-        console.log(user1)
-        let obj = {}
-        function A(){
-            return obj
-        };
-        function B(){
-            return obj
-        };
-        // let a = new A();
-        // let b = new B();
-
-        //alert (new A() == new B())
-
-        //asignment2
-        // function Calculator(){
-        //     this.read = function(){
-        //         this.a = +prompt('input value 1');
-        //         this.b = +prompt('input value 2')
-        //     }
-        //     this.sum = function(){
-        //         return this.a + this.b
-        //     }
-        //     this.mul = function(){
-        //         return this.a * this.b
-        //     }
+        //     };
         // }
-        // let user = new Calculator();
-        // console.log (user)
-        // user.read()
-        // alert(user.sum())
+        // let calc = new Calc;
+
+        // function Name(name,age,address){
+        //     this.name = name;
+        //     this.age = age;
+        //     this.address = address;
+        // };
+        
+        // let user01 = new Name(
+        //     'Muhammad',
+        //     32,
+        //     '1, Abdussalam street, Tanke, Ilorin, Kwara Stare'
+        // );
+        // console.log(user01);
+
+        // // let calc = {
+        // //     //a:prompt('value1'),
+        // //     //b:prompt('value 2'),
+        // //     sum(){
+        // //         return this.a + this.b;
+        // //     },
+        // //     read(){
+        // //         this.a = +prompt('value1');
+        // //         this.b = +prompt('value2');
+        // //     },
+        // // } 
+        // calc.read();
+        // console.log(calc.sum());
+
+        // function Title(title, subtitle) {
+        //     this.mainTitle = title;
+        //     this.subtitle = subtitle;
+        // }
+        // let acc1 = new Title('Hello', 'Muhammad');
+        // console.log(acc1);
+        // let acc2 = new Title('Welldone', 'Ma');
+        // console.log(acc2);
+        // function Person(name, age){
+        //     this.firstName = name,
+        //     this.age = age
+        // }
+        // const person1 = new Person('Bill', 30);
+        // const person2 = new Person('Muhammad', 23)
+        // console.log(person1);
+        // console.log(person2)
+
+        // function User(name,address){
+        //     this.name = name,
+        //     this.address = address
+        // };
+        // const user1 = new User('Muhammad','Tanke');
+        // console.log(user1)
+        // let obj = {}
+        // function A(){
+        //     return obj
+        // };
+        // function B(){
+        //     return obj
+        // };
+        // // let a = new A();
+        // // let b = new B();
+
+        // //alert (new A() == new B())
+
+        // //asignment2
+        // // function Calculator(){
+        // //     this.read = function(){
+        // //         this.a = +prompt('input value 1');
+        // //         this.b = +prompt('input value 2')
+        // //     }
+        // //     this.sum = function(){
+        // //         return this.a + this.b
+        // //     }
+        // //     this.mul = function(){
+        // //         return this.a * this.b
+        // //     }
+        // // }
+        // // let user = new Calculator();
+        // // console.log (user)
+        // // user.read()
+        // // alert(user.sum())
 
 
-        //assignment 3
-        let currentValue = 0
-        function Accumulator(startingValue){
-            this.read = function(){
-                this.value += +prompt('input a number');
-                //return this
-            }
-            this.value = startingValue;
-        }
-        //let accumulator = new Accumulator(1)
-        //console.log(accumulator)
-        // accumulator.read();
-        // accumulator.read();
-        //alert(accumulator.value)
+        // //assignment 3
+        // let currentValue = 0
+        // function Accumulator(startingValue){
+        //     this.read = function(){
+        //         this.value += +prompt('input a number');
+        //         //return this
+        //     }
+        //     this.value = startingValue;
+        // }
+        // //let accumulator = new Accumulator(1)
+        // //console.log(accumulator)
+        // // accumulator.read();
+        // // accumulator.read();
+        //alert(accumulator.value);
+
+        function Person(firstName, birthYear){
+            this.firstName = firstName,
+            this.birthYear = birthYear
+        };
+        console.log(Person.prototype);
+        Person.prototype.calcAge = function(){
+            console.log(2037 - this.birthYear);
+        };
+        Person.prototype.species = 'Homo Sapiens'
+        let jack = new Person('Jack', 1991)
+        console.log(jack.species);
     </script>
 </body>
 </html>
