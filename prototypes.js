@@ -204,5 +204,32 @@ let yourStore = {
     __proto__: store
 };
 myStore.stock[1].quantity = 300
-console.log(myStore.stock);
-console.log(yourStore.stock);
+// console.log(myStore.stock);
+// console.log(yourStore.stock);
+// console.log(store.stock);
+function Person(name){
+    this.name = name
+};
+//let cleo = Person('cleo');
+let taylor = new Person('Taylor');
+//console.log(Object.getOwnPropertyNames(cleo));
+//console.log(Object.getOwnPropertyNames(taylor));
+
+function Car(make, speed){
+    this.make = make;
+    this.speed = speed;
+};
+Car.prototype.accelerate =  function(){
+    this.speed+=10;
+    return `${this.make} going at ${this.speed} km/h`;
+}
+Car.prototype.break =  function(){
+    this.speed-=5;
+    return `${this.make} going at ${this.speed} km/h`;
+}
+let car1 = new Car('BMW', 120);
+let car2 = new Car('Mercedes', 95);
+console.log(car1.accelerate());
+console.log(car1.accelerate());
+console.log(car1.break());
+console.log(car1.accelerate());
