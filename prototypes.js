@@ -111,7 +111,7 @@ const matilda = new Person('Matilda', 1975);
 //console.log(Object.getPrototypeOf(matilda));
 Person.prototype.calcAge = function(){
     console.log(2037 - this.birthYear);
-}
+};
 console.log(matilda.__proto__);
 console.log(Object.getPrototypeOf(matilda))
 //console.log(Person.prototype);
@@ -233,3 +233,27 @@ console.log(car1.accelerate());
 console.log(car1.accelerate());
 console.log(car1.break());
 console.log(car1.accelerate());
+class CreateCar{
+    constructor(make, speed){
+        this.make = make;
+        this.speed = speed
+    }
+    accelerate(){
+        this.speed+=10;
+        return `${this.make} going at ${this.speed} km/h`;
+    }
+    break(){
+        this.speed-=5;
+        return `${this.make} going at ${this.speed} km/h`;
+    }
+    get speedUs(){
+        return `${this.speed/1.6} mi/h`
+    }
+    set speedUs(value){
+        this.speed = this.speed * 1.6
+    }
+}
+
+let ex1 = new CreateCar('Ford', 120);
+console.log(ex1.speedUs);
+
