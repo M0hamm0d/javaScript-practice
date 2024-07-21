@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(firstName, birthYear){
+            this.firstName = firstName;
+            this.birthYear = birthYear
+        }
+        Person.prototype.calcAge = function(){
+            console.log(2037 - this.birthYear)
+        };
+
+        const Student  = function(firstName, birthYear, course){
+            this.firstName = firstName;
+            this.birthYear = birthYear;
+            this.course = course
+        };
+        //Student.prototype.__proto = Person.prototype
+        Student.prototype = Object.create(Person.prototype);
+        Student.prototype.info = function(){
+            console.log(`I am ${this.firstName} and I study ${this.course} in University of ilorin`);
+        }
+        Student.prototype.constructor = Student
+        const habeeb = new Student('Muhammad', 2002, 'Computer Science');
+        //console.dir(Student.prototype.constructor);
+        // console.log(habeeb.calcAge());
+        // console.log(habeeb instanceof Student);
+
+
+
+        function Car(make, speed){
+            this.make = make;
+            this.speed = speed;
+        };
+        Car.prototype.accelerate =  function(){
+            this.speed+=10;
+            return `${this.make} going at ${this.speed} km/h`;
+        }
+        Car.prototype.break =  function(){
+            this.speed-=5;
+            return `${this.make} going at ${this.speed} km/h`;
+        }   
+        function EV(make, speed, charge){
+            Car.call(this, make, speed)
+            this.charge = charge
+        };
+        EV.prototype = Object.create(Car.prototype);
+        EV.prototype.chargeBattery = function(chargeTo){
+            this.charge = chargeTo;
+            console.log(this);
+        };
+        EV.prototype.accelerate = function(){
+            this.speed+=20;
+            this.charge-=1;
+            console.log(`${this.make} going at ${this.speed}km/h, with a charge of ${this.charge}%`);
+        }
+        EV.prototype.constructor = EV;
+
+        const EC = new EV('Tesla', 120, 23);
+        console.log(EC.accelerate());
+        console.log(EC.accelerate());
+        console.log(EC.accelerate());
+        console.log(EC.break());
+        console.log(EC.chargeBattery(60));
+        console.log(EC.accelerate());
+
+    </script>
+</body>
+</html>
+
+<!-- // const Student = function(firstName, birthYear, course){
+//     Person.call(this, firstName, birthYear)
+//     this.course = course
+// };
+// Student.prototype = Object.create(Person.prototype);
+
+// Student.prototype.introduce = function(){
+//     console.log(`My name is ${this.firstName} and i study ${this.course}`);
+// };
+// let rizqoh = new Student('Muhammad', 2004, 'Computer Science');
+// Student.prototype.constructor = Student
+// console.log(rizqoh.introduce()); -->

@@ -10,6 +10,19 @@ class PersonCl{
     calcAge(){
         return 2037 - this.birthYear
     }
+    greet(){
+        console.log(`Hey ${this.name}`);
+    }
+    get age(){
+        return 2037 - this.birthYear
+    }
+    set fullName(name){
+        if(name.includes(' ')){
+            this._fullName = name
+        } else{
+            console.log(`${name} is not a full name`);
+        }
+    }
 };
 let myInfo = new PersonCl('Muhammad', 1997);
 console.log(myInfo.calcAge());
@@ -117,3 +130,24 @@ const sarah = Object.create(PersonProto, {
     }
 });
 console.log(sarah.jump);
+
+
+//More classes example
+class Account {
+    constructor(owner, currency, pin){
+        this.owner = owner;
+        this.currency = currency;
+        this.pin = pin;
+        this.movement = [];
+    }
+    deposit(val){
+        this.movement.push(val)
+    }
+    withdrawal(val){
+        this.deposit(-val)
+    }
+};
+const acc1 = new Account('Jonas', 'EUR', 1111)
+acc1.movement.push(250);
+acc1.movement.push(-132);
+console.log(acc1);
