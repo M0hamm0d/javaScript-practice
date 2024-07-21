@@ -10,6 +10,19 @@ class PersonCl{
     calcAge(){
         return 2037 - this.birthYear
     }
+    greet(){
+        console.log(`Hey ${this.name}`);
+    }
+    get age(){
+        return 2037 - this.birthYear
+    }
+    set fullName(name){
+        if(name.includes(' ')){
+            this._fullName = name
+        } else{
+            console.log(`${name} is not a full name`);
+        }
+    }
 };
 let myInfo = new PersonCl('Muhammad', 1997);
 console.log(myInfo.calcAge());
@@ -117,3 +130,70 @@ const sarah = Object.create(PersonProto, {
     }
 });
 console.log(sarah.jump);
+
+
+//More classes example
+class Account {
+    constructor(owner, currency, pin){
+        this.owner = owner;
+        this.currency = currency;
+        this.pin = pin;
+        this.movement = [];
+    }
+    deposit(val){
+        this.movement.push(val)
+    }
+    withdrawal(val){
+        this.deposit(-val)
+    }
+};
+const acc1 = new Account('Jonas', 'EUR', 1111)
+acc1.movement.push(250);
+acc1.movement.push(-132);
+console.log(acc1);
+
+
+class CreateCar{
+    constructor(make, speed){
+        this.make = make;
+        this.speed = speed
+    }
+    accelerate(){
+        this.speed+=10;
+        console.log(`${this.make} going at ${this.speed} km/h`);
+        return this;
+    }
+    break(){
+        this.speed-=5;
+        return `${this.make} going at ${this.speed} km/h`;
+    }
+    get speedUs(){
+        return `${this.speed/1.6} mi/h`
+    }
+    set speedUs(value){
+        this.speed = this.speed * 1.6
+    }
+}
+
+// let ex1 = new CreateCar('Ford', 120);
+class EVCl extends CreateCar{
+    #charge;
+    constructor(make, speed){
+        super(make, speed)
+        this.#charge = charge;
+    }
+    chargeBattery(chargeTo){
+        this.#charge = chargeTo;
+        console.log(this);
+    }
+    accelerate(){
+        this.speed+=20;
+        this.#charge-=1;
+        console.log(`${this.make} going at ${this.speed}km/h, with a charge of ${this.charge}%`);
+    }
+};
+
+
+
+const rivian = new EVCl('rivian', 120, 23);
+console.log(rivian);

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CLASSES EXERCISES</h1>
+    <script>
+        class Animal{
+            constructor(type, name){
+                this.type = type;
+                this.name = name
+            }
+        };
+        let monkey = new Animal('Homo', 'Monkey');
+        let lion = new Animal('Sapien', 'Lion');
+        lion.type = 'Mono'
+        console.log(monkey, lion);
+
+        class Student{
+            constructor(name, major, grades){
+                this.name = name;
+                this.major = major;
+                this.grades = grades
+            }
+            addGrade(grade){
+                this.grades.push(grade)
+            }
+            gpa(){
+                return this.grades.reduce((sum, current)=>sum+current, 0) /this.grades.length
+            }
+        }
+        const eva = new Student('Eva', 'Arts', [95, 75, 83]);
+        eva.addGrade(89)
+        console.log(eva);
+        console.log(eva.gpa());
+
+        class Bookstore{
+            constructor(books){
+                this.books = books
+            }
+            listBooks(){
+                this.books.forEach(item => {
+                    console.log(`${item.name} by ${item.author}`)
+                });
+            }
+        };
+        class Book{
+            constructor(name, author){
+                this.name = name;
+                this.author = author
+            }
+        }
+        const nineteen84 = new Book('1984', 'George Orwell');
+        const hp = new Book('Harry Potter', 'J.K. Rowling');
+        
+
+        const bookstore = new Bookstore([nineteen84, hp])
+        console.log(bookstore.listBooks());
+        console.log(hp);
+
+        class EnemyFactory{
+            generateFlyingEnemy(value){
+                return class{
+                    fly(){
+                        `${value} can fly`
+                    }
+                }
+            }
+            generateSwimmingEnemy(value){
+                return class{
+                    swim(){
+                        `${value} can swim`
+                    }
+                }
+            }
+        }
+        const factory = new EnemyFactory();
+        const flying = factory.generateFlyingEnemy('batman');
+        console.log(flying.fly());
+
+
+
+        // class CreateCar{
+        // constructor(make, speed){
+        //     this.make = make;
+        //     this.speed = speed
+        // }
+        // accelerate(){
+        //     this.speed+=10;
+        //     console.log(`${this.make} going at ${this.speed} km/h`);
+        //     return this;
+        // }
+        // break(){
+        //     this.speed-=5;
+        //     return `${this.make} going at ${this.speed} km/h`;
+        // }
+        // get speedUs(){
+        //     return `${this.speed/1.6} mi/h`
+        // }
+        // set speedUs(value){
+        //     this.speed = this.speed * 1.6
+        // }
+        // }
+
+        // let ex1 = new CreateCar('Ford', 120);
+        // class EVCl extends CreateCar{
+        //     #charge;
+        //     constructor(make, speed, charge){
+        //         super(make, speed)
+        //         this.#charge = charge;
+        //     }
+        //     chargeBattery(chargeTo){
+        //         this.#charge = chargeTo;
+        //         console.log(this);
+        //     }
+        //     accelerate(){
+        //         this.speed+=20;
+        //         this.#charge-=1;
+        //         console.log(`${this.make} going at ${this.speed}km/h, with a charge of ${this.charge}%`);
+        //     }
+        // };
+        // const rivian = new EVCl('rivian', 120, 23);
+        // console.log(rivian);
+    </script>
+</body>
+</html>
