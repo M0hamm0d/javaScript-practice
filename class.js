@@ -176,22 +176,22 @@ class CreateCar{
 }
 
 // let ex1 = new CreateCar('Ford', 120);
-class EVCl extends CreateCar{
-    #charge;
-    constructor(make, speed){
-        super(make, speed)
-        this.#charge = charge;
-    }
-    chargeBattery(chargeTo){
-        this.#charge = chargeTo;
-        console.log(this);
-    }
-    accelerate(){
-        this.speed+=20;
-        this.#charge-=1;
-        console.log(`${this.make} going at ${this.speed}km/h, with a charge of ${this.charge}%`);
-    }
-};
+// class EVCl extends CreateCar{
+//     #charge;
+//     constructor(make, speed){
+//         super(make, speed)
+//         this.#charge = charge;
+//     }
+//     chargeBattery(chargeTo){
+//         this.#charge = chargeTo;
+//         console.log(this);
+//     }
+//     accelerate(){
+//         this.speed+=20;
+//         this.#charge-=1;
+//         console.log(`${this.make} going at ${this.speed}km/h, with a charge of ${this.charge}%`);
+//     }
+// };
 
 class Clock{
     timer
@@ -226,8 +226,60 @@ class Clock{
     }
 }
 let clock = new Clock({template: 'h:m:s'});
-clock.start();
+//clock.start();
 
 
-const rivian = new EVCl('rivian', 120, 23);
-console.log(rivian);
+//const rivian = new EVCl('rivian', 120, 23);
+//console.log(rivian);
+
+
+
+//ENCAPSULATION
+
+
+class Database {
+    token = 'abc123';
+    constructor(){}
+
+    saveData(data){
+        this.initDBConnection()
+        this.authorize()
+        this.updateQuery()
+    }
+
+    initDBConnection(){}
+    authorize(){}
+    updateQuery(){}
+};
+let newDB = new Database()
+newDB.saveData([1, 2, 3])
+console.log(newDB);
+
+
+class CoffeeMachine {
+    constructor (waterLimit){
+        this.waterLimit = waterLimit
+    }
+    
+    set waterLimit(value){
+        if (value < 0){
+            console.log(`negative value is not possible`)
+            return
+        } 
+        return this.waterLimit = value
+    }
+
+    // fixWaterAmount(value) {
+    //   if (value < 0) return 0;
+    //   if (value > this.waterLimit) return this.waterLimit;
+    // }
+  
+    // setWaterAmount(value) {
+    //   this.waterLimit = this.fixWaterAmount(value);
+    // }
+  
+}
+  
+let coffeeMachine = new CoffeeMachine(-20);
+//coffeeMachine.water = -30
+//console.log(coffeeMachine.water);
