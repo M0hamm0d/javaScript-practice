@@ -176,24 +176,110 @@ class CreateCar{
 }
 
 // let ex1 = new CreateCar('Ford', 120);
-class EVCl extends CreateCar{
-    #charge;
-    constructor(make, speed){
-        super(make, speed)
-        this.#charge = charge;
+// class EVCl extends CreateCar{
+//     #charge;
+//     constructor(make, speed){
+//         super(make, speed)
+//         this.#charge = charge;
+//     }
+//     chargeBattery(chargeTo){
+//         this.#charge = chargeTo;
+//         console.log(this);
+//     }
+//     accelerate(){
+//         this.speed+=20;
+//         this.#charge-=1;
+//         console.log(`${this.make} going at ${this.speed}km/h, with a charge of ${this.charge}%`);
+//     }
+// };
+
+class Clock{
+    timer
+    constructor ({template}){
+        this.template = template;
     }
-    chargeBattery(chargeTo){
-        this.#charge = chargeTo;
-        console.log(this);
+    render() {
+        date = new Date();
+    
+        hours = date.getHours();
+        if (hours < 10) hours = '0' + hours;
+    
+        mins = date.getMinutes();
+        if (mins < 10) mins = '0' + mins;
+    
+        secs = date.getSeconds();
+        if (secs < 10) secs = '0' + secs;
+    
+        output = template
+        .replace('h', hours)
+        .replace('m', mins)
+        .replace('s', secs);
+
+        console.log(output);
     }
-    accelerate(){
-        this.speed+=20;
-        this.#charge-=1;
-        console.log(`${this.make} going at ${this.speed}km/h, with a charge of ${this.charge}%`);
+    stop() {
+        clearInterval(timer);
     }
+    start() {
+        render();
+        timer = setInterval(render, 1000);
+    }
+}
+let clock = new Clock({template: 'h:m:s'});
+//clock.start();
+
+
+//const rivian = new EVCl('rivian', 120, 23);
+//console.log(rivian);
+
+
+
+//ENCAPSULATION
+
+
+class Database {
+    token = 'abc123';
+    constructor(){}
+
+    saveData(data){
+        this.initDBConnection()
+        this.authorize()
+        this.updateQuery()
+    }
+
+    initDBConnection(){}
+    authorize(){}
+    updateQuery(){}
 };
+let newDB = new Database()
+newDB.saveData([1, 2, 3])
+console.log(newDB);
 
 
+class CoffeeMachine {
+    constructor (waterLimit){
+        this.waterLimit = waterLimit
+    }
+    
+    set waterLimit(value){
+        if (value < 0){
+            console.log(`negative value is not possible`)
+            return
+        } 
+        return this.waterLimit = value
+    }
 
-const rivian = new EVCl('rivian', 120, 23);
-console.log(rivian);
+    // fixWaterAmount(value) {
+    //   if (value < 0) return 0;
+    //   if (value > this.waterLimit) return this.waterLimit;
+    // }
+  
+    // setWaterAmount(value) {
+    //   this.waterLimit = this.fixWaterAmount(value);
+    // }
+  
+}
+  
+let coffeeMachine = new CoffeeMachine(-20);
+//coffeeMachine.water = -30
+//console.log(coffeeMachine.water);
