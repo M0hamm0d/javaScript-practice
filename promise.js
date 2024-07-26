@@ -83,9 +83,17 @@
 //     document.head.append(script)
 // }
 
-fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits')
-  .then(response => response.json())
-  .then(commits => console.log(commits[0].commit.author.name));
+
+async function j(){
+  let response = await fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits');
+  let result = await response.json();
+  console.log(result[0].commit.author.email);
+}
+j()
+
+// fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits')
+//   .then(response => response.json())
+//   .then(commits => console.log(commits[0].commit.author.name));
 
 
   //commits => console.log(commits[0].author.login)
@@ -94,7 +102,6 @@ fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commi
   // fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits')
   // .then(response => response.json())
   // .then(response => console.log(response.author))
-
 
 let theNew = new Promise((resolve, reject)=>{
   reject(new Error('This code was rejected'))
@@ -131,3 +138,66 @@ Promise.race([
   new Promise((resolve, reject)=> setTimeout(()=>{reject(2)},300)),
   new Promise((resolve, reject)=> setTimeout(()=>{resolve(3)},500))
 ]).then(value=> console.log(value)).catch(err=>console.log(err))
+
+
+Promise.all([
+  new Promise(resolve=> setTimeout(() => {
+    resolve(1)
+  }, 3000)),
+  new Promise(resolve=> setTimeout(() => {
+    resolve(2)
+  }, 2000)),
+  new Promise(resolve=> setTimeout(() => {
+    resolve(3)
+  }, 1000))
+]).then(result=> console.log(result))
+
+//ASYNC AWAIT FUNCTION
+async function f(){
+  let promise = new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+      console.log('Done!');
+    },1500);
+  })
+  let result = await promise
+  console.log(result);
+}
+//async means a function that returns a promise
+
+
+function fetchSomeData(){
+  const data = new Promise(resolve=>{
+    setTimeout(() => {
+      resolve({data: 'Hi', error: null})
+    }, 1000);
+  })
+  return data
+};
+
+fetchSomeData().then(result=> console.log(result))
+async function fetchData(){
+  let result = await fetchSomeData();
+  console.log(result);
+}
+fetchData()
+
+const makeTimeOut = (ms)=>{
+  let result = new Promise(resolve=>{
+    setTimeout(() => {
+      resolve(`This function finishes in ${ms/1000} seconds`)
+    }, ms);
+  })
+  return result
+};
+
+makeTimeOut(5000).then(result=>console.log(result));
+makeTimeOut(6000).then(result=>console.log(result));
+
+async function func(){
+  let result = await makeTimeOut(7000)
+  console.log(result);
+
+  let result2 = await makeTimeOut(8000)
+  console.log(result2);
+}
+func()
