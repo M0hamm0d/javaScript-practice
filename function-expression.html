@@ -1,83 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>HELLO, I'M LEARNING FUNCTION EXPRESSION</h1>
     <script>
-        // function ask(question,yes,no){
-        //     if (confirm(question))yes()
-        //     else no();
-        // }
-        // function accept(){
-        //     console.log('This is correct');
-        // }
+      // function ask(question,yes,no){
+      //     if (confirm(question))yes()
+      //     else no();
+      // }
+      // function accept(){
+      //     console.log('This is correct');
+      // }
 
+      // function reject(){
+      //     console.log('This is not correct');
+      // }
+      // ask('Is this a number',accept,reject)
 
-        // function reject(){
-        //     console.log('This is not correct');
-        // }
-        // ask('Is this a number',accept,reject)
+      // function greet(name) {
+      // alert(`hello ${name}`);
+      // }
 
-        // function greet(name) {
-        // alert(`hello ${name}`);
-        // }
-        
+      // function processUserInput(callback) {
+      //     let name = prompt('Please enter your name.');
+      //     callback(name);
+      // }
+      // processUserInput(greet);
 
-        // function processUserInput(callback) {
-        //     let name = prompt('Please enter your name.');
-        //     callback(name);
-        // }
-        // processUserInput(greet);
+      // function display(result) {
+      //     console.log(result)
+      // }
+      // function add(num1,num2, myCallback) {
+      //     let sum = num1 + num2;
+      //     myCallback(sum);
+      // }
+      // add(10,20,display);
 
-        // function display(result) {
-        //     console.log(result)
-        // }
-        // function add(num1,num2, myCallback) {
-        //     let sum = num1 + num2;
-        //     myCallback(sum);
-        // }
-        // add(10,20,display);
+      //Anonymous function
+      (function () {
+        console.log("Welcome to this page");
+      })();
 
+      const cutPieces = function (fruit) {
+        return fruit * 4;
+      };
+      const fruitProcessor = function (Apples, Oranges) {
+        const applePieces = cutPieces(Apples);
+        const orangePieces = cutPieces(Oranges);
+        let juice = `This juice was made from ${applePieces} Apples and ${orangePieces} Oranges`;
+        return juice;
+      };
+      let fruitJuice = fruitProcessor(3, 2);
+      console.log(fruitJuice);
 
-        //Anonymous function
-        (
-            function(){
-                console.log('Welcome to this page')
-            }
-        ) () ; 
-        
-        const cutPieces = function(fruit){
-            return fruit * 4;
-        }
-        const fruitProcessor = function(Apples, Oranges){
-            const applePieces = cutPieces(Apples);
-            const orangePieces = cutPieces(Oranges)
-            let juice = `This juice was made from ${applePieces} Apples and ${orangePieces} Oranges`
-            return juice;
-        };
-        let fruitJuice = fruitProcessor(3,2);
-        console.log(fruitJuice);
+      const percentageOfWorld1 = function (population) {
+        return (population / 7900) * 100;
+      };
+      let nigeriaPopulation = percentageOfWorld1(11000000);
+      let ghanaPopulation = percentageOfWorld1(55000000);
+      let finlandPopulation = percentageOfWorld1(200000000);
 
-        //Excercise
-        const percentageOfWorld1 = function(population){
-            return (population/7900)*100;
-        }
-        let nigeriaPopulation = percentageOfWorld1(11000000);
-        let ghanaPopulation = percentageOfWorld1(55000000);
-        let finlandPopulation = percentageOfWorld1(200000000);
+      // console.log(nigeriaPopulation,finlandPopulation,ghanaPopulation);
 
-        // console.log(nigeriaPopulation,finlandPopulation,ghanaPopulation);
-        
-
-        //Callback function
-        function describePopulation(country, population) {
-            const description = `${country} has ${population} million people, which is about ${ghanaPopulation} % of the world`;console.log(description)
-        }
-        describePopulation('Ghana', 15000000);
+      //Callback function
+      function describePopulation(country, population) {
+        const description = `${country} has ${population} million people, which is about ${ghanaPopulation} % of the world`;
+        console.log(description);
+      }
+      describePopulation("Ghana", 15000000);
     </script>
-</body>
+  </body>
 </html>
