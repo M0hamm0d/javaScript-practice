@@ -1,39 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <button class="btn">answer Poll</button>
+  </head>
+  <body>
+    <h1 class="btn"></h1>
     <script>
-        const poll = {
-            question: 'What is your favorite programming language',
-            options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
-            answer: new Array(4).fill(0),
-            registeredNumber(){
-                let ans =  Number(prompt(`${this.question}\n ${this.options.join('\n')} \n [write the option below]`));
-                if (ans < this.answer.length){
-                    this.answer[ans] ++ 
-                }
-                this.displayResults()
-                this.displayResults('string')
-            },
-            displayResults(type = 'array'){
-                if(type === 'array'){
-                    console.log(this.answer);
-                } else if (type === 'string'){
-                    console.log(`Poll result are ${this.answer.join(',')}`);
-                }
-            }
-        }
-        document.querySelector('.btn').addEventListener('click', poll.registeredNumber.bind(poll));
-        poll.displayResults('string')
-        console.log(poll.registeredNumber());
-        //console.log(poll.answer);
+      let buffer = new ArrayBuffer(16);
+      let view = new Uint16Array(buffer);
+      //   document.querySelector(".btn").textContent = buffer.byteLength; //16
+      document.querySelector(".btn").textContent = view.length; //8
+      console.log(Uint16Array.BYTES_PER_ELEMENT);
 
-        poll.displayResults.call({answer: [5, 2, 3]})
+      view = [12, 13, 14, 15, 16, 17, 18, 19];
+      console.log([...view]);
+      for (num of view) {
+        console.log(num);
+      }
     </script>
-</body>
+  </body>
 </html>
