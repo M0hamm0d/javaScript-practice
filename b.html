@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <script type="module">
-        import { sayHi } from "./modules.js";
-        sayHi()
-        console.log('How are you');
-        console.log(import.meta);
+  </head>
+  <body>
+    <script>
+      async function resp() {
+        let response = await fetch(
+          "https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits"
+        );
+        for (const el of response.headers) {
+          console.log(el);
+        }
+      }
+
+      resp();
     </script>
-    
-</body>
+  </body>
 </html>
