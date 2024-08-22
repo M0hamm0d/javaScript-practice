@@ -6,17 +6,31 @@
     <title>Document</title>
   </head>
   <body>
+    <p>hello</p>
     <script>
-      async function resp() {
-        let response = await fetch(
-          "https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits"
-        );
-        for (const el of response.headers) {
-          console.log(el);
+      // let name = "my name";
+      // let value = "John Smith";
+      // document.cookie =
+      //   encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+      let date = new Date(Date.now() + 86400e3);
+      date = date.toUTCString();
+      document.cookie = "name= MO; expires=" + date;
+
+      function setCookie(name, value, exDay) {
+        let expires = "";
+        if (exDay) {
+          let date = new Date();
+          date.setTime(date.getTime() + exDay * 24 * 60 * 60 * 1000);
+          expires = "; expires=" + date.toUTCString();
         }
+        document.cookie =
+          name + "=" + (encodeURIComponent(value) || "") + expires + "; path=/";
       }
 
-      resp();
+      setCookie("user2", "john", 7);
+
+      console.log(document.cookie);
     </script>
   </body>
 </html>
