@@ -8,29 +8,30 @@
   <body>
     <p>hello</p>
     <script>
-      // let name = "my name";
-      // let value = "John Smith";
-      // document.cookie =
-      //   encodeURIComponent(name) + "=" + encodeURIComponent(value);
+      let str = "We will, we will rock you";
+      console.log(str.match(/we/i));
+      console.log(str.replace(/we/gi, "I"));
 
-      let date = new Date(Date.now() + 86400e3);
-      date = date.toUTCString();
-      document.cookie = "name= MO; expires=" + date;
+      let str1 = "+7(903)-123-45-67";
+      console.log(str1.match(/\D/g).join(","));
 
-      function setCookie(name, value, exDay) {
-        let expires = "";
-        if (exDay) {
-          let date = new Date();
-          date.setTime(date.getTime() + exDay * 24 * 60 * 60 * 1000);
-          expires = "; expires=" + date.toUTCString();
-        }
-        document.cookie =
-          name + "=" + (encodeURIComponent(value) || "") + expires + "; path=/";
-      }
+      let str2 = "$A ბ ㄱ";
+      console.log(str2.match(/\p{Sc}\p{L}/gu));
 
-      setCookie("user2", "john", 7);
+      let str3 = "its fleece was white as snow";
+      console.log(/snow$/.test(str3));
 
-      console.log(document.cookie);
+      let str4 = `1st position is Muhammad
+2nd position is Aisha
+3rd position is Abdullahi`;
+      //       let str4 = `1st place: Winnie
+      // 2nd place: Piglet
+      // 3rd place: Eeyore`;
+
+      console.log(str4.match(/^\d/gm));
+
+      let str5 = "Breakfast at 09:00 in the room 123:456.";
+      console.log(str5.match(/\b\d\d:\d\d\b/g));
     </script>
   </body>
 </html>
