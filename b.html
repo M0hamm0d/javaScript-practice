@@ -6,17 +6,32 @@
     <title>Document</title>
   </head>
   <body>
+    <p>hello</p>
     <script>
-      async function resp() {
-        let response = await fetch(
-          "https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits"
-        );
-        for (const el of response.headers) {
-          console.log(el);
-        }
-      }
+      let str = "We will, we will rock you";
+      console.log(str.match(/we/i));
+      console.log(str.replace(/we/gi, "I"));
 
-      resp();
+      let str1 = "+7(903)-123-45-67";
+      console.log(str1.match(/\D/g).join(","));
+
+      let str2 = "$A ბ ㄱ";
+      console.log(str2.match(/\p{Sc}\p{L}/gu));
+
+      let str3 = "its fleece was white as snow";
+      console.log(/snow$/.test(str3));
+
+      let str4 = `1st position is Muhammad
+2nd position is Aisha
+3rd position is Abdullahi`;
+      //       let str4 = `1st place: Winnie
+      // 2nd place: Piglet
+      // 3rd place: Eeyore`;
+
+      console.log(str4.match(/^\d/gm));
+
+      let str5 = "Breakfast at 09:00 in the room 123:456.";
+      console.log(str5.match(/\b\d\d:\d\d\b/g));
     </script>
   </body>
 </html>
