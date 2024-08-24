@@ -22,8 +22,8 @@
       console.log(/snow$/.test(str3));
 
       let str4 = `1st position is Muhammad
-2nd position is Aisha
-3rd position is Abdullahi`;
+      2nd position is Aisha
+      3rd position is Abdullahi`;
       //       let str4 = `1st place: Winnie
       // 2nd place: Piglet
       // 3rd place: Eeyore`;
@@ -32,6 +32,13 @@
 
       let str5 = "Breakfast at 09:00 in the room 123:456.";
       console.log(str5.match(/\b\d\d:\d\d\b/g));
+
+      console.log("function g()".match(/g\(\)/g));
+      console.log("/".match(new RegExp("/")));
+      console.log(/x[0-9A-F][0-9A-F]/.test("0xAF"));
+      console.log(/[a-z][0-9]/);
+      console.log("I'm not 12, but 345678 years old 432".match(/\d{3,}/g));
+      console.log("hello where are you".match(/[a-z]+/g));
     </script>
   </body>
 </html>
