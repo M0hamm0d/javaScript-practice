@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <todo-item>Todo list</todo-item>
+    <script>
+      class TodoItem extends HTMLElement {
+        constructor() {
+          super();
+          const shadow = this.attachShadow({ mode: "open" });
+          this.innerHTML = `<h3>${this.innerText}</h3>`;
+        }
+      }
+
+      customElements.define("todo-item", TodoItem);
+    </script>
+  </body>
+</html>
