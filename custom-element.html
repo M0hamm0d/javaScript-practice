@@ -6,8 +6,10 @@
     <title>Document</title>
   </head>
   <body>
+    <img src="" alt="logo" class="logo" />
     <todo-item>Todo list</todo-item>
     <script>
+      const logo = document.querySelector(".logo");
       class TodoItem extends HTMLElement {
         constructor() {
           super();
@@ -16,6 +18,18 @@
         }
       }
       customElements.define("todo-item", TodoItem);
+
+      fetch("https:api.github.com/users/M0hamm0d/repos")
+        .then((response) => response.json())
+        .then((data) => {
+          logo.src = `${data[17].owner["avatar_url"]}`;
+        });
+
+      fetch("https:api.github.com/users/M0hamm0d/repos?page=1")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+        });
     </script>
   </body>
 </html>
